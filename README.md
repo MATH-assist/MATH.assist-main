@@ -12,3 +12,12 @@ LINKS:
 
 https://its-me.ga (main)
 
+https://schooldudes.cf (main)
+
+
+
+
+
+
+the file rr.html is responsible for rickrolling you. 
+you know... if ur lucky enough to get that.
