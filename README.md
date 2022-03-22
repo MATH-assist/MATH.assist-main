@@ -21,3 +21,6 @@ https://schooldudes.cf (main)
 
 the file rr.html is responsible for rickrolling you. 
 you know... if ur lucky enough to get that.
+
+
+if any one understands css and wants to redo the games menu, submit a pull request.
