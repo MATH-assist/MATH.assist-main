@@ -413,40 +413,12 @@ background-size: 1800% 1800%;
 	
 	
 	
-	<div id="dialog" title="hiiiii!">
-  <p>Welcome</p>
-  <p>to my site of stuff</p>
-  <button name="yes" class="yes">Ok!</button>
-  <button name="no" class="no">dont show again</button>
-  <button name="urmom" onclick="yourFunction()" class="urmom">dont click me</button>
+
+  <button name="urmom" onclick="yourFunction()" class="urmom">dont click this</button>
 </div>
 
 	
 	<style>
-		
-		.yes {
-  background-color: #4CAF50;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 15px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.no {
-  background-color: red;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 15px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
 
 .urmom {
   background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
@@ -540,20 +512,7 @@ background-size: 1800% 1800%;
 	
 	
 	<script>
-	if (!localStorage.urmom) {
-  $(function() {
-    $("#dialog").dialog();
-  });
-} else {
-  $("#dialog").css("display", "none");
-}
-$(".yes").on("click", function() {
-  $("#dialog").dialog("close");
-});
-$(".no").on("click", function() {
-  localStorage.setItem('urmom', true);
-  $("#dialog").dialog("close");
-});
+
 
 function yourFunction() {
   window.open('/games/Y2Mate.is%20-%20Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up%20(Official%20Music%20Video)-dQw4w9WgXcQ-480p-1629827473341.mp4')
