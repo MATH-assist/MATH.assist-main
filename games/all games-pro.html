@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/games/files/main.css">
+<link rel="stylesheet" href="https://its-me.ga/games/files/main.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="shortcut icon" href="/logo.png">
 <title>LEGEND</title>
@@ -173,7 +173,7 @@ function onClick(element) {
 }
 </script>
 <input type="text" id="myInput" onkeyup="aFunction()" placeholder="Search for games.." title="Type in a game">
-<div class="test-menu">
+<div class="menuseven">
 <a href="altlink.html"> alt links (in case of block)</a>
 </div>
 	
@@ -185,7 +185,7 @@ function onClick(element) {
 
 
 
-<ul id="vertical-menu">
+<ul id="vertical-menu-one">
  <li><a href="../"> Home</a></li>
   <li><a href="/games/files/slope">1) slope</a></li>
   <li><a href="swap.html">2) swap</a></li>
@@ -275,17 +275,72 @@ function aFunction() {
 
 
 
-
-
 <style>
-     body {
-  background-color: grey;
+
+ .menuseven {
+  width: 50%; /* Set a width if you like */
+   margin: auto;
+   text-align: center;
+   font-family: "Lucida Console", "Courier New", monospace;
+	    font-size: 30px;
+
+}
+
+.menuseven a {
+  background-color: yellow; /* Grey background color */
+  color: blue; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
   
 }
-</style>
-    <style>
+
+  .menuseven a:hover {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: black;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
     
-    
+}
+
+.menuseven a.active {
+  background-color: #04AA6D; /* Add a green color to the "active/current" link */
+  color: black;
+}
+      .menuseven { 
+  
+
+  
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 3s ease infinite;
+-o-animation: rainbow 3s ease infinite;
+  animation: rainbow 3s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+} 
     #myInput {
   background-position: 10px 12px;
   background-repeat: no-repeat;
@@ -297,7 +352,7 @@ function aFunction() {
   text-align: center;
   
 }
-    #vertical-menu li {
+    #vertical-menu-one li {
   width: 50%; /* Set a width if you like */
    margin: auto;
    text-align: left;
@@ -307,22 +362,22 @@ function aFunction() {
 
 }
 
-#vertical-menu a {
-  background-color: grey; /* Grey background color */
+#vertical-menu-one a {
+  background-color: white; /* Grey background color */
   color: blue; /* Black text color */
   display: block; /* Make the links appear below each other */
   padding: 12px; /* Add some padding */
   text-decoration: none; /* Remove underline from links */
 }
-#vertical-menu li {
-  background-color: grey; /* Grey background color */
+#vertical-menu-one li {
+  background-color: white; /* Grey background color */
   color: blue; /* Black text color */
   display: block; /* Make the links appear below each other */
   padding: 0px; /* Add some padding */
   text-decoration: none; /* Remove underline from links */
 }
 
-  #vertical-menu a:hover {
+  #vertical-menu-one a:hover {
     background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -333,11 +388,11 @@ function aFunction() {
     
 }
 
-#vertical-menu a.active {
+#vertical-menu-one a.active {
   background-color: #04AA6D; /* Add a green color to the "active/current" link */
   color: black;
 }
-      #vertical-menu li:hover{ 
+      #vertical-menu-one li:hover{ 
   
 text-decoration: none;
   
@@ -369,85 +424,18 @@ background-size: 1800% 1800%;
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
-     
-    
-     
-      </style>
-    
-	
-	 <style>
-    .test-menu {
-  width: 50%; /* Set a width if you like */
-   margin: auto;
-   text-align: center;
-   font-family: "Lucida Console", "Courier New", monospace;
-	    font-size: 30px;
 
-}
-
-.test-menu a {
-  background-color: yellow; /* Grey background color */
-  color: blue; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
-  
-}
-
-  .test-menu a:hover {
-    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: black;
-    animation: rainbow_animation 6s ease-in-out infinite;
-    background-size: 400% 100%;
-    
-}
-
-.test-menu a.active {
-  background-color: #04AA6D; /* Add a green color to the "active/current" link */
-  color: black;
-}
-      .test-menu { 
-  
-
-  
-background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-background-size: 1800% 1800%;
-
--webkit-animation: rainbow 18s ease infinite;
--z-animation: rainbow 3s ease infinite;
--o-animation: rainbow 3s ease infinite;
-  animation: rainbow 3s ease infinite;}
-
-@-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-     
-    
-     
-
-	
-	
-	
 </style>
+
+<style>
+     body {
+  background-color: white;
+  
+}
+</style>
+    
+	
+	
     
     <div class="iframe">
    
@@ -469,111 +457,40 @@ background-size: 1800% 1800%;
 	
 
   <button name="urmom" onclick="yourFunction()" class="urmom">dont click this</button>
-</div>
-
-	
-	<style>
-
-.urmom {
-  background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: black;
-  animation: rainbow_animation 6s ease-in-out infinite;
-  background-size: 400% 100% border: none;
-  color: black;
-  padding: 7px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 11px;
-}
-
-.urmom {
-
-
-
-  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-  background-size: 1800% 1800%;
-
-  -webkit-animation: rainbow 18s ease infinite;
-  -z-animation: rainbow 3s ease infinite;
-  -o-animation: rainbow 3s ease infinite;
-  animation: rainbow 3s ease infinite;
-}
-
-@-webkit-keyframes rainbow {
-  0% {
-    background-position: 0% 82%
-  }
-
-  50% {
-    background-position: 100% 19%
-  }
-
-  100% {
-    background-position: 0% 82%
-  }
-}
-
-@-moz-keyframes rainbow {
-  0% {
-    background-position: 0% 82%
-  }
-
-  50% {
-    background-position: 100% 19%
-  }
-
-  100% {
-    background-position: 0% 82%
-  }
-}
-
-@-o-keyframes rainbow {
-  0% {
-    background-position: 0% 82%
-  }
-
-  50% {
-    background-position: 100% 19%
-  }
-
-  100% {
-    background-position: 0% 82%
-  }
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 0% 82%
-  }
-
-  50% {
-    background-position: 100% 19%
-  }
-
-  100% {
-    background-position: 0% 82%
-  }
-}
-
-	
-	
-	</style>
-	
-	
-	
-	
+</div>	
 	<script>
-
 
 function yourFunction() {
   window.open('/games/Y2Mate.is%20-%20Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up%20(Official%20Music%20Video)-dQw4w9WgXcQ-480p-1629827473341.mp4')
 }
 </script>
 	
-	
+	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+  
+  const options = {
+  bottom: '64px', // default: '32px'
+  right: 'unset', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: ' #000000',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: false // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+
+</script>
+
 	<script type="text/javascript" src="//counter.websiteout.net/js/2/0/0/1"></script>
 	
 	<h5>this counts how many page views there are. i might reset it somtimes</h5>
