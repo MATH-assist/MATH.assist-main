@@ -24,7 +24,7 @@ var newWindow;
         var RandomX = (Math.random() * 1024) + 1;
         var RandomY = (Math.random() * 768) + 1;
 	var specs = "height=200px, width=200px, left=" + RandomX + ", top=" + RandomY;
-	newWindow = window.open("http://its-me.ga/games/popups/2.html","test", specs);
+	newWindow = window.open("/games/popups/2.html","test", specs);
 	}, 1000);
 	
 	setInterval(function(){
@@ -92,14 +92,14 @@ var newWindow;
 
 
 <script type="text/javascript"> 
-function CrashAndBurn(url) { popupWindow = window.open( 'http://its-me.ga/games/popups/2.html','popUpWindow','height=181,width=666,left=3,top=222') }
+function CrashAndBurn(url) { popupWindow = window.open( '/games/popups/2.html','popUpWindow','height=181,width=666,left=3,top=222') }
 </script> 
 <body onload="JavaScript:CrashAndBurn(self.location,'_blank');JavaScript:CrashAndBurn(self.location,'_blank');">
 	
 <script>	
 	$(document).ready(function () {
   setTimeout(function () {
-    window.location.href = "http://its-me.ga/games/popups/pathtoend.html"
+    window.location.href = "/games/popups/pathtoend.html"
   }, 7000);
 });
 	</script>
@@ -122,3 +122,6 @@ window.onbeforeunload = function (e) {
     return 'Sure?';
 };
 </script>
+
+
+
