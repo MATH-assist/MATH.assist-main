@@ -1,5 +1,4 @@
-
-for educational purposes only. I DO NOT claim any of these games to be my creation
+ I DO NOT claim any of these games to be my creation
 
 
 website with stuff and games
@@ -12,9 +11,11 @@ LINKS:
 
 https://its-me.ga (main)
 
-https://schooldudes.cf (main)
+https://urmom52.ga (main)
 
 
+
+divide any number by 0 and select enter
 
 
 
