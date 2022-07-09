@@ -11,7 +11,8 @@ LINKS:
 
 https://its-me.ga (main)
 
-https://urmom52.ga (main)
+
+
 
 
 
