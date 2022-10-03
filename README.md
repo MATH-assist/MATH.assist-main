@@ -9,7 +9,7 @@ I know its messy, but it works.
 LINKS:
 
 
-https://its-me.ga (main)
+https://its-me.ga
 
 
 
