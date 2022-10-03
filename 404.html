@@ -92,10 +92,38 @@ function onClick(element) {
     <p align="center"><h3> The page you requested could not be found. </h3>
     <p align="center"><h3> Someday this page might exist but for now enjoy this game. </h3>
  
-    
-    
-<p align="center"><iframe id="iframe" autofocus="true" src="/games/files/t-rex-runner-gh-pages/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="200px" width="400px" allowfullscreen></iframe>
+    <script>
+      
+      
+    var cat1 = [
+    "/games/files/auto-t-rex-runner/",
+    "/games/files/t-rex-runner-gh-pages/",
+    ];
 
+var myFrame = document.getElementById("frame");
+
+function getRandomUrl(myFrame) {
+   var index = Math.floor(Math.random()*cat1.length);
+   var url = cat1[index];
+   myFrame.src = url;
+}
+
+btn.addEventListener("click", function() {
+    
+   getRandomUrl(myFrame); 
+    
+});
+      </script>
+    
+    <script>
+      window.onload = function(){
+    getRandomUrl(myFrame);
+};
+      </script>
+    <iframe id="frame" src="" style="width:400px; height: 200px"></iframe>
+    
+<!--<p align="center"><iframe id="iframe" autofocus="true" src="/games/files/t-rex-runner-gh-pages/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="200px" width="400px" allowfullscreen></iframe>
+-->
 
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 <script>
