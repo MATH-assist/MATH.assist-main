@@ -16,7 +16,8 @@ https://its-me.ga (main)
 
 
 
-** to get to the games go to the calculator tab on any of my sites and put in 8/0 and click "="**
+#to get to the games#
+**go to the calculator tab on any of my sites and put in 8/0 and click "="**
 
 
 
