@@ -21,9 +21,9 @@ https://its-me.ga (main)
 
 
 
-
+# rick roll #
 the file rr.html is responsible for rickrolling you. 
 you know... if ur lucky enough to get that.
 
-
+# any errors? want to help with style? #
 if any one understands css and wants to redo the games menu, submit a pull request.
