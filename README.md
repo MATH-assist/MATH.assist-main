@@ -27,3 +27,5 @@ you know... if ur lucky enough to get that.
 
 # any errors? want to help with style? #
 if any one understands css and wants to redo the games menu, submit a pull request.
+
+be aware I have no clue what some files are. 🤣
