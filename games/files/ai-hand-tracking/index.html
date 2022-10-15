@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+          <title>hand tracker</title>
+        <script src="/games/main/main.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=no">
+  <style>body {
+      margin: 0;
+    }
+    #stats {
+      position: relative;
+      width: 100%;
+      height: 80px;
+    }
+    #main {
+      position: relative;
+      margin: 0;
+    }
+    #canvas-wrapper {
+      position: relative;
+    }
+    #scatter-gl-container-left, #scatter-gl-container-right {
+      position: relative;
+      float: left;
+    }</style>
+</head>
+<body>
+  <div id="stats"></div>
+  <div id="main">
+    <div class="container">
+      <div class="canvas-wrapper">
+        <canvas id="output"></canvas>
+        <video id="video" playsinline="" style="
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          visibility: hidden;
+          width: auto;
+          height: auto;
+          ">
+        </video>
+      </div>
+      <div id="scatter-gl-container-left"></div>
+      </div>
+      <div id="scatter-gl-container-right"></div>
+    </div>
+  
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+<script src="https://storage.googleapis.com/tfjs-models/demos/hand-pose-detection/src.a2b27638.js"></script>
+
+</html>
