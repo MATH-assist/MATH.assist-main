@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="TemplateData/style.css">
 <script src="TemplateData/UnityProgress.js"></script>
 <script src="TemplateData/UnityLoader.js"></script>
+        <script src="/games/main/main.js"></script>
 <script>
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/rooftop-snipers.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });
     </script>
