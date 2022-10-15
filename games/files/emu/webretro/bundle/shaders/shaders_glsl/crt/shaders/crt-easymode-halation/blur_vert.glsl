@@ -1,3 +1,10 @@
+// Higher value, more centered glow.
+// Lower values might need more taps.
+#define GLOW_FALLOFF 0.35
+#define TAPS 4.
+
+#define kernel(x) exp(-GLOW_FALLOFF * (x) * (x))
+
 #if defined(VERTEX)
 
 #if __VERSION__ >= 130
@@ -12,7 +19,6 @@
 
 #ifdef GL_ES
 #define COMPAT_PRECISION mediump
-precision COMPAT_PRECISION float;
 #else
 #define COMPAT_PRECISION
 #endif
@@ -75,61 +81,18 @@ COMPAT_VARYING vec4 TEX0;
 #define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
 #define outsize vec4(OutputSize, 1.0 / OutputSize)
 
-void weights(out vec4 x, out vec4 y, vec2 t)
-{
-   vec2 t2 = t * t;
-   vec2 t3 = t2 * t;
-
-   vec4 xs = vec4(1.0, t.x, t2.x, t3.x);
-   vec4 ys = vec4(1.0, t.y, t2.y, t3.y);
-
-   const vec4 p0 = vec4(+0.0, -0.5, +1.0, -0.5);
-   const vec4 p1 = vec4(+1.0,  0.0, -2.5, +1.5);
-   const vec4 p2 = vec4(+0.0, +0.5, +2.0, -1.5);
-   const vec4 p3 = vec4(+0.0,  0.0, -0.5, +0.5);
-
-   x = vec4(dot(xs, p0), dot(xs, p1), dot(xs, p2), dot(xs, p3));
-   y = vec4(dot(ys, p0), dot(ys, p1), dot(ys, p2), dot(ys, p3));
-}
-
 void main()
 {
-   vec2 uv = vTexCoord * SourceSize.xy - 0.5;
-   vec2 texel = floor(uv);
-   vec2 tex = (texel + 0.5) * SourceSize.zw;
-   vec2 phase = uv - texel;
+	vec3 col = vec3(0.0);
+	float dy = SourceSize.w;
 
-#define TEX(x, y) textureLodOffset(Source, tex, 0.0, ivec2(x, y)).rgb
-
-   vec4 x;
-   vec4 y;
-   weights(x, y, phase);
-
-   vec3 color;
-   vec4 row = x * y.x;
-   color  = TEX(-1, -1) * row.x;
-   color += TEX(+0, -1) * row.y;
-   color += TEX(+1, -1) * row.z;
-   color += TEX(+2, -1) * row.w;
-
-   row = x * y.y;
-   color += TEX(-1, +0) * row.x;
-   color += TEX(+0, +0) * row.y;
-   color += TEX(+1, +0) * row.z;
-   color += TEX(+2, +0) * row.w;
-
-   row = x * y.z;
-   color += TEX(-1, +1) * row.x;
-   color += TEX(+0, +1) * row.y;
-   color += TEX(+1, +1) * row.z;
-   color += TEX(+2, +1) * row.w;
-
-   row = x * y.w;
-   color += TEX(-1, +2) * row.x;
-   color += TEX(+0, +2) * row.y;
-   color += TEX(+1, +2) * row.z;
-   color += TEX(+2, +2) * row.w;
-
-   FragColor = vec4(color, 1.0);
+	float k_total = 0.;
+	for (float i = -TAPS; i <= TAPS; i++)
+		{
+		float k = kernel(i);
+		k_total += k;
+		col += k * COMPAT_TEXTURE(Source, vTexCoord + vec2(0.0, float(i) * dy)).rgb;
+		}
+   FragColor = vec4(col / k_total, 1.0);
 } 
 #endif

@@ -1,3 +1,7 @@
+// Parameter lines go here:
+#pragma parameter BOOST "Color Boost" 1.0 0.5 1.5 0.02
+#pragma parameter CRT_GEOM_BEAM "CRT-Geom Beam" 1.0 0.0 1.0 1.0
+
 #if defined(VERTEX)
 
 #if __VERSION__ >= 130
@@ -12,7 +16,6 @@
 
 #ifdef GL_ES
 #define COMPAT_PRECISION mediump
-precision COMPAT_PRECISION float;
 #else
 #define COMPAT_PRECISION
 #endif
@@ -22,6 +25,8 @@ COMPAT_ATTRIBUTE vec4 COLOR;
 COMPAT_ATTRIBUTE vec4 TexCoord;
 COMPAT_VARYING vec4 COL0;
 COMPAT_VARYING vec4 TEX0;
+COMPAT_VARYING vec2 data_pix_no;
+COMPAT_VARYING COMPAT_PRECISION float data_one;
 
 vec4 _oPosition1; 
 uniform mat4 MVPMatrix;
@@ -31,11 +36,18 @@ uniform COMPAT_PRECISION vec2 OutputSize;
 uniform COMPAT_PRECISION vec2 TextureSize;
 uniform COMPAT_PRECISION vec2 InputSize;
 
+#define vTexCoord TEX0.xy
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define outsize vec4(OutputSize, 1.0 / OutputSize)
+
 void main()
 {
     gl_Position = MVPMatrix * VertexCoord;
     COL0 = COLOR;
     TEX0.xy = TexCoord.xy;
+
+    data_pix_no = vTexCoord * SourceSize.xy - vec2(0.0, 0.5);
+    data_one    = SourceSize.w;
 }
 
 #elif defined(FRAGMENT)
@@ -68,7 +80,8 @@ uniform COMPAT_PRECISION vec2 TextureSize;
 uniform COMPAT_PRECISION vec2 InputSize;
 uniform sampler2D Texture;
 COMPAT_VARYING vec4 TEX0;
-// in variables go here as COMPAT_VARYING whatever
+COMPAT_VARYING vec2 data_pix_no;
+COMPAT_VARYING COMPAT_PRECISION float data_one;
 
 // compatibility #defines
 #define Source Texture
@@ -77,62 +90,47 @@ COMPAT_VARYING vec4 TEX0;
 #define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
 #define outsize vec4(OutputSize, 1.0 / OutputSize)
 
-void weights(out vec4 x, out vec4 y, vec2 t)
+#ifdef PARAMETER_UNIFORM
+// All parameter floats need to have COMPAT_PRECISION in front of them
+uniform COMPAT_PRECISION float BOOST;
+uniform COMPAT_PRECISION float CRT_GEOM_BEAM;
+#else
+#define BOOST 1.0
+#define CRT_GEOM_BEAM 1.0
+#endif
+
+vec3 beam(vec3 color, float dist)
 {
-   vec2 t2 = t * t;
-   vec2 t3 = t2 * t;
+if (CRT_GEOM_BEAM > 0.5){
+    vec3 wid     = vec3(2.0) + 2.0 * pow(color, vec3(4.0));
+    vec3 weights = vec3(abs(dist) * 3.333333333);
 
-   vec4 xs = vec4(1.0, t.x, t2.x, t3.x);
-   vec4 ys = vec4(1.0, t.y, t2.y, t3.y);
+    return 2.0 * color * exp(-pow(weights * inversesqrt(0.5 * wid), wid)) / (0.6 + 0.2 * wid);
+   }else{
+    float reciprocal_width = 4.0;
+    vec3 x = vec3(dist * reciprocal_width);
 
-   const vec4 p0 = vec4(+0.0, -0.5, +1.0, -0.5);
-   const vec4 p1 = vec4(+1.0,  0.0, -2.5, +1.5);
-   const vec4 p2 = vec4(+0.0, +0.5, +2.0, -1.5);
-   const vec4 p3 = vec4(+0.0,  0.0, -0.5, +0.5);
-
-   x = vec4(dot(xs, p0), dot(xs, p1), dot(xs, p2), dot(xs, p3));
-   y = vec4(dot(ys, p0), dot(ys, p1), dot(ys, p2), dot(ys, p3));
+    return 2.0 * color * exp(-0.5 * x * x) * reciprocal_width;
+   }
 }
 
 void main()
 {
-   vec2 uv = vTexCoord * SourceSize.xy - 0.5;
-   vec2 texel = floor(uv);
-   vec2 tex = (texel + 0.5) * SourceSize.zw;
-   vec2 phase = uv - texel;
+    vec2  texel = floor(data_pix_no);
+    float phase = data_pix_no.y - texel.y;
+    vec2  tex   = vec2(texel + 0.5) * SourceSize.zw;
 
-#define TEX(x, y) textureLodOffset(Source, tex, 0.0, ivec2(x, y)).rgb
+    vec3 top    = COMPAT_TEXTURE(Source, tex + vec2(0.0, 0.0 * data_one)).rgb;
+    vec3 bottom = COMPAT_TEXTURE(Source, tex + vec2(0.0, 1.0 * data_one)).rgb;
 
-   vec4 x;
-   vec4 y;
-   weights(x, y, phase);
+    float dist0 = phase;
+    float dist1 = 1.0 - phase;
 
-   vec3 color;
-   vec4 row = x * y.x;
-   color  = TEX(-1, -1) * row.x;
-   color += TEX(+0, -1) * row.y;
-   color += TEX(+1, -1) * row.z;
-   color += TEX(+2, -1) * row.w;
+    vec3 scanline = vec3(0.0);
 
-   row = x * y.y;
-   color += TEX(-1, +0) * row.x;
-   color += TEX(+0, +0) * row.y;
-   color += TEX(+1, +0) * row.z;
-   color += TEX(+2, +0) * row.w;
+    scanline += beam(top,    dist0);
+    scanline += beam(bottom, dist1);
 
-   row = x * y.z;
-   color += TEX(-1, +1) * row.x;
-   color += TEX(+0, +1) * row.y;
-   color += TEX(+1, +1) * row.z;
-   color += TEX(+2, +1) * row.w;
-
-   row = x * y.w;
-   color += TEX(-1, +2) * row.x;
-   color += TEX(+0, +2) * row.y;
-   color += TEX(+1, +2) * row.z;
-   color += TEX(+2, +2) * row.w;
-
-   color = sqrt(clamp(color, vec3(0.0), vec3(1.0)));
-   FragColor = vec4(color, 1.0);
+    FragColor = vec4(BOOST * scanline * 0.869565217391304, 1.0);
 } 
 #endif

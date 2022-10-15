@@ -1,3 +1,6 @@
+// Parameter lines go here:
+#pragma parameter HORIZ_GAUSS_WIDTH "Horiz Gauss Width" 0.5 0.0 1.0 0.01
+
 #if defined(VERTEX)
 
 #if __VERSION__ >= 130
@@ -12,7 +15,6 @@
 
 #ifdef GL_ES
 #define COMPAT_PRECISION mediump
-precision COMPAT_PRECISION float;
 #else
 #define COMPAT_PRECISION
 #endif
@@ -22,7 +24,9 @@ COMPAT_ATTRIBUTE vec4 COLOR;
 COMPAT_ATTRIBUTE vec4 TexCoord;
 COMPAT_VARYING vec4 COL0;
 COMPAT_VARYING vec4 TEX0;
-
+COMPAT_VARYING COMPAT_PRECISION float data_pix_no;
+COMPAT_VARYING COMPAT_PRECISION float data_one;
+ 
 uniform mat4 MVPMatrix;
 uniform COMPAT_PRECISION int FrameDirection;
 uniform COMPAT_PRECISION int FrameCount;
@@ -30,11 +34,17 @@ uniform COMPAT_PRECISION vec2 OutputSize;
 uniform COMPAT_PRECISION vec2 TextureSize;
 uniform COMPAT_PRECISION vec2 InputSize;
 
+#define vTexCoord TEX0.xy
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define outsize vec4(OutputSize, 1.0 / OutputSize)
+
 void main()
 {
     gl_Position = MVPMatrix * VertexCoord;
     COL0 = COLOR;
     TEX0.xy = TexCoord.xy;
+    data_pix_no = vTexCoord.x * SourceSize.x;
+    data_one    = SourceSize.z;
 }
 
 #elif defined(FRAGMENT)
@@ -67,6 +77,8 @@ uniform COMPAT_PRECISION vec2 TextureSize;
 uniform COMPAT_PRECISION vec2 InputSize;
 uniform sampler2D Texture;
 COMPAT_VARYING vec4 TEX0;
+COMPAT_VARYING COMPAT_PRECISION float data_pix_no;
+COMPAT_VARYING COMPAT_PRECISION float data_one;
 
 // compatibility #defines
 #define Source Texture
@@ -75,61 +87,30 @@ COMPAT_VARYING vec4 TEX0;
 #define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
 #define outsize vec4(OutputSize, 1.0 / OutputSize)
 
-void weights(out vec4 x, out vec4 y, vec2 t)
-{
-   vec2 t2 = t * t;
-   vec2 t3 = t2 * t;
+#ifdef PARAMETER_UNIFORM
+// All parameter floats need to have COMPAT_PRECISION in front of them
+uniform COMPAT_PRECISION float HORIZ_GAUSS_WIDTH;
+#else
+#define HORIZ_GAUSS_WIDTH 0.5
+#endif
 
-   vec4 xs = vec4(1.0, t.x, t2.x, t3.x);
-   vec4 ys = vec4(1.0, t.y, t2.y, t3.y);
-
-   const vec4 p0 = vec4(+0.0, -0.5, +1.0, -0.5);
-   const vec4 p1 = vec4(+1.0,  0.0, -2.5, +1.5);
-   const vec4 p2 = vec4(+0.0, +0.5, +2.0, -1.5);
-   const vec4 p3 = vec4(+0.0,  0.0, -0.5, +0.5);
-
-   x = vec4(dot(xs, p0), dot(xs, p1), dot(xs, p2), dot(xs, p3));
-   y = vec4(dot(ys, p0), dot(ys, p1), dot(ys, p2), dot(ys, p3));
-}
+#define INV_SQRT_2_PI 0.38 // Doesn't have to be accurate.
 
 void main()
 {
-   vec2 uv = vTexCoord * SourceSize.xy - 0.5;
-   vec2 texel = floor(uv);
-   vec2 tex = (texel + 0.5) * SourceSize.zw;
-   vec2 phase = uv - texel;
+    float texel      = floor(data_pix_no);
+    float phase      = data_pix_no - texel;
+    float base_phase = phase - 0.5;
+    vec2 tex         = vec2((texel + 0.5) * SourceSize.z, vTexCoord.y);
 
-#define TEX(x, y) textureLodOffset(Source, tex, 0.0, ivec2(x, y)).rgb
+    vec3 col = vec3(0.0);
+    for (float i = -2.0; i <= 2.0; i++)
+    {
+        float phase = base_phase - float(i);
+        float g = INV_SQRT_2_PI * exp(-0.5 * phase * phase / (HORIZ_GAUSS_WIDTH * HORIZ_GAUSS_WIDTH)) / HORIZ_GAUSS_WIDTH;
+        col += COMPAT_TEXTURE(Source, tex + vec2(float(i) * data_one, 0.0)).rgb * g;
+    }
 
-   vec4 x;
-   vec4 y;
-   weights(x, y, phase);
-
-   vec3 color;
-   vec4 row = x * y.x;
-   color  = TEX(-1, -1) * row.x;
-   color += TEX(+0, -1) * row.y;
-   color += TEX(+1, -1) * row.z;
-   color += TEX(+2, -1) * row.w;
-
-   row = x * y.y;
-   color += TEX(-1, +0) * row.x;
-   color += TEX(+0, +0) * row.y;
-   color += TEX(+1, +0) * row.z;
-   color += TEX(+2, +0) * row.w;
-
-   row = x * y.z;
-   color += TEX(-1, +1) * row.x;
-   color += TEX(+0, +1) * row.y;
-   color += TEX(+1, +1) * row.z;
-   color += TEX(+2, +1) * row.w;
-
-   row = x * y.w;
-   color += TEX(-1, +2) * row.x;
-   color += TEX(+0, +2) * row.y;
-   color += TEX(+1, +2) * row.z;
-   color += TEX(+2, +2) * row.w;
-
-   FragColor = vec4(color, 1.0);
+    FragColor = vec4(col, 1.0);
 } 
 #endif
