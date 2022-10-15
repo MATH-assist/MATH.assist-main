@@ -2,9 +2,27 @@
 <html>
 	<head>
 		<title>Choose a File</title>
+		<style>
+		body {
+			background-color: #101010;
+			color: white;
+		}
+		
+		.center {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			margin: 0px;
+			text-align: center;
+		}
+		</style>
 	</head>
 	<body>
-		<h2>I'm supposed to be an invisible iframe... (you shouldn't see this)</h2>
+		<div class="center">
+			<h1>Choose a file...</h1>
+			<h2>Make sure you have popups enabled!</h2>
+		</div>
 		<script src="https://www.dropbox.com/static/api/2/dropins.js"></script>
 		<script src="https://js.live.net/v7.2/OneDrive.js"></script>
 		<script src="tokens.js"></script>
@@ -14,8 +32,12 @@
 		var fileTypes = queries.exts ? queries.exts.split(",") : [];
 		
 		function finish(message, name, data) {
-			window.parent.postMessage({webretro: {timestamp: parseInt(queries.timestamp), message: message, name: name, data: data}}, "*");
+			window.opener.postMessage({webretro: {timestamp: parseInt(queries.timestamp), message: message, name: name, data: data}}, "*");
 		}
+		
+		window.addEventListener("unload", function() {
+			if (queries.type) finish("cancelled");
+		}, false);
 		
 		function xhr(loc, success, error) {
 			var xhr = new XMLHttpRequest();
