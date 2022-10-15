@@ -58,40 +58,6 @@ if (window.localStorage.hasOwnProperty("icon")) {
 }
 
 
-//Semantic - Major.Minor.Patch
-const sArr = [`1`, `4`, `0`];
-const version = "v" + sArr.join(".");
-document.body.style.backgroundColor = "var(--bg-color)";
-document.body.style.fontFamily = "var(--font)";
-//Fetch visit count
-const visitapi =
-  "https://api.countapi.xyz/update/emulatoros.github.io/78c84613-3752-436e-ae7c-29f94d1fc15f/?amount=1";
-fetch(visitapi)
-  .then((res) => res.json())
-  .then((res) => {
-    document.getElementById("visit-count").innerText = res.value; //Add commas
-  });
-(function (history) {
-  var pushState = history.pushState;
-  history.pushState = function (state) {
-    if (typeof history.onpushstate == "function") {
-      history.onpushstate(arguments);
-    }
-    return pushState.apply(history, arguments);
-  };
-})(window.history);
-const gc = document.createElement("script");
-gc.src = "/assets/js/count.js";
-gc.setAttribute("data-goatcounter", "https://emulatoros.goatcounter.com/count");
-gc.setAttribute("data-goatcounter-settings", '{"allow_local": true}');
-document.head.appendChild(gc);
-// Manage page changes
-history.onpushstate = () => {
-  setTimeout(() => {
-    console.log(location.pathname);
-    goatcounter.count();
-  }, 1);
-};
 
 //Turn off GSAP null warnings (if present)
 try {
@@ -149,14 +115,14 @@ const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
     if (newtitle.value == ""){ //check if the input is blank when they submit
         window.localStorage.removeItem("title");
-        window.document.title = "Settings"
-        document.getElementById("console-output").style.color = "red"; //error = red
-        console_output.innerText = "No title entered. Default applied" //return output successful
+        window.document.title = "LEGEND"
+       
+       
     } else {
         window.localStorage.setItem("title", newtitle.value);
         window.document.title = newtitle.value; //Set window's title to userinput
-        document.getElementById("console-output").style.color = null; //reset output's color to green
-        console_output.innerText = "Title change successful" //return output successful
+  
+        
     }
     newtitle.value = ""; //clear input
 };
@@ -165,14 +131,14 @@ function TabTitle(newtitle)  {
         console.log(newtitle + ' empty')
         window.localStorage.removeItem("title");
         window.document.title = "Settings"
-        document.getElementById("console-output").style.color = "red"; //error = red
-        console_output.innerText = "No title entered. Default applied" //return output successful
+     
+       
     } else {
         console.log(newtitle)
         window.localStorage.setItem("title", newtitle);
         window.document.title = newtitle; //Set window's title to userinput
-        document.getElementById("console-output").style.color = null; //reset output's color to green
-        console_output.innerText = "Title change successful" //return output successful
+  
+       
     }
 };
 
@@ -183,11 +149,7 @@ const changeTabIcon = () => {
         document.head.querySelector("link[rel=icon]").href = newfavicon.value;
         window.localStorage.setItem("icon", newfavicon.value);
         loadPreview();
-        document.getElementById("console-output").style.color = null;
-        console_output.innerText = "Icon change successful"
-    } else {
-        document.getElementById("console-output").style.color = "red";
-        console_output.innerText = "Icon change failed. Make sure you are using a valid URL"
+   
     }
     newfavicon.value = ""; //clear input
 };
@@ -197,11 +159,9 @@ function TabIcon(newfavicon) {
         document.head.querySelector("link[rel=icon]").href = newfavicon;
         window.localStorage.setItem("icon", newfavicon);
         loadPreview();
-        document.getElementById("console-output").style.color = null;
-        console_output.innerText = "Icon change successful"
-    } else {
-        document.getElementById("console-output").style.color = "red";
-        console_output.innerText = "Icon change failed. Make sure you are using a valid URL"
+     
+  
+      
     }
 };
 
