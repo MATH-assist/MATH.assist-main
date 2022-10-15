@@ -20,7 +20,7 @@ if (localStorage.getItem("appearance") !== "neon") {
   }
 }
 function setLogo(highlight) {
-  document.querySelector("link[rel='icon']").href = "/assets/icon.png";
+  document.querySelector("link[rel='icon']").href = "/logo.png";
 }
 function getLogo(highlight = "#2493ff") {
   console.log("for later update setlogo()");
@@ -54,40 +54,92 @@ if (window.localStorage.hasOwnProperty("title")) {
 if (window.localStorage.hasOwnProperty("icon")) {
   document.querySelector("link[rel=icon]").href = local_icon;
 } else {
-  document.querySelector("link[rel=icon]").href = "/assets/icon.png";
+  document.querySelector("link[rel=icon]").href = "/logo.png";
 }
 
 
-//Prepend Navbar (using innerHTML because there's no escaped input)
-const $header = document.createElement("header");
-$header.setAttribute("id", "header");
-$header.innerHTML = `<nav class="aa-nav">
-<div class="aa-nav-items2">
-<span class="aa-nav-item" >
-  <div class="users-online"><i class="fas fa-users"></i> <span id="user-count">13</span></div>
-</span>
-</div>
-<div class="aa-nav-items">
-  <span class="aa-nav-item"><a href="/home" target="_top">Home</a></span>
-  
-  <span class="aa-nav-item"><a href="/" target="_top">Games</a></span>
-     <span class="aa-nav-item"><a href="/apps" target="_top">Apps</a></span>
-  <span class="aa-nav-item"><a href="/settings" target="_top">Settings</a></span>
-  </div>
-</nav>
-<div class="aa-hamburger-menu collapsed" id="hamburgerMenu" onclick="toggleMenu()">
-<span class="aa-icon-bar"></span>
-<span class="aa-icon-bar"></span>
-<span class="aa-icon-bar"></span>
-</div>
-<div class="aa-mobile-overlay">
-<ul class="aa-mobile-nav-items">
-  <li><a href="/home" target="_top">Home</a></li>
-  <li><a href="/" target="_top">Games</a></li>
-  <li><a href="/apps" target="_top">Apps</a></li>
-  <li><a href="/settings" target="_top">Settings</a></li>
-</ul>
-</div>`;
+//Semantic - Major.Minor.Patch
+const sArr = [`1`, `4`, `0`];
+const version = "v" + sArr.join(".");
+document.body.style.backgroundColor = "var(--bg-color)";
+document.body.style.fontFamily = "var(--font)";
+//Fetch visit count
+const visitapi =
+  "https://api.countapi.xyz/update/emulatoros.github.io/78c84613-3752-436e-ae7c-29f94d1fc15f/?amount=1";
+fetch(visitapi)
+  .then((res) => res.json())
+  .then((res) => {
+    document.getElementById("visit-count").innerText = res.value; //Add commas
+  });
+(function (history) {
+  var pushState = history.pushState;
+  history.pushState = function (state) {
+    if (typeof history.onpushstate == "function") {
+      history.onpushstate(arguments);
+    }
+    return pushState.apply(history, arguments);
+  };
+})(window.history);
+const gc = document.createElement("script");
+gc.src = "/assets/js/count.js";
+gc.setAttribute("data-goatcounter", "https://emulatoros.goatcounter.com/count");
+gc.setAttribute("data-goatcounter-settings", '{"allow_local": true}');
+document.head.appendChild(gc);
+// Manage page changes
+history.onpushstate = () => {
+  setTimeout(() => {
+    console.log(location.pathname);
+    goatcounter.count();
+  }, 1);
+};
+
+//Turn off GSAP null warnings (if present)
+try {
+  gsap.config({
+    nullTargetWarn: false,
+  });
+} catch {
+  //empty b/c no need for return
+}
+
+//Hamburger Menu Navbar
+const toggleMenu = () => {
+  $("#hamburgerMenu").toggleClass("collapsed");
+  $(".aa-mobile-overlay").animate(
+    {
+      height: "toggle",
+      opacity: "toggle",
+    },
+    300
+  );
+};
+
+const navHeight = 90;
+const scrollNavHeight = 65;
+let isExpanded = true;
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() > navHeight) {
+    $(".aa-nav").addClass("aa-small-nav");
+    $(".aa-nav-icon").addClass("aa-small-nav-icon");
+    $(".aa-nav-items").addClass("aa-small-nav-items");
+    $(".aa-nav-items2").addClass("aa-small-nav-items");
+    $(".aa-hamburger-menu").addClass("aa-small-hamburger-menu");
+    isExpanded = false;
+  }
+
+  if (!isExpanded && $(window).scrollTop() < navHeight) {
+    $(".aa-nav").removeClass("aa-small-nav");
+    $(".aa-nav-icon").removeClass("aa-small-nav-icon");
+    $(".aa-nav-items").removeClass("aa-small-nav-items");
+    $(".aa-nav-items2").removeClass("aa-small-nav-items");
+    $(".aa-hamburger-menu").removeClass("aa-small-hamburger-menu");
+    $(".aa-nav-item > a").css("color", "white");
+    isExpanded = true;
+  }
+});
+
+
 
 const image_preview = document.getElementById("image-preview");
 const console_output = document.getElementById("console-output");
@@ -153,6 +205,11 @@ function TabIcon(newfavicon) {
     }
 };
 
+//Load preview of image
+const loadPreview = () => {
+    image_preview.setAttribute("src", localStorage.getItem("icon"));
+};
+
 //Clears Tab Icon and Title
 const resetTabSettings = () => {
     let items = ["icon", "title"];
@@ -166,9 +223,53 @@ const validURL = (str) => {
     var expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
     var regex = new RegExp(expression);
     return !!regex.test(str);
+}
+var appearance = localStorage.getItem("appearance")
 
-  
-  var sel = localStorage.getItem("plink") || "none"
+if (localStorage.getItem("appearance") !== null) {
+    console.log(appearance)
+document.getElementsByTagName("body")[0].setAttribute("appearance", appearance)
+document.querySelectorAll(".tabtheme").forEach(e => e.classList.remove("tabbuttonactive"));
+document.querySelector(".tabtheme[theme='" + appearance + "']").classList.add("tabbuttonactive")
+} else {
+    console.log('null')
+localStorage.setItem("appearance", "default")
+document.getElementsByTagName("body")[0].setAttribute("appearance", "default")
+}
+
+function setapp(theme) {
+  localStorage.setItem("appearance", theme)
+  console.log(theme + ' theme')
+  document.querySelectorAll(".tabtheme").forEach(e =>  e.classList.remove("tabbuttonactive"));
+  document.querySelector(".tabtheme[theme='" + theme + "']").classList.add("tabbuttonactive")
+  document.getElementsByTagName("body")[0].setAttribute("appearance", theme)
+if (!localStorage.getItem("favicon")) {
+setLogo(getComputedStyle(document.body).getPropertyValue('--highlight').replaceAll(" ", ""))
+}
+}
+
+var background = localStorage.getItem("background") || "none"
+document.querySelector(".tabbg[bg='" + background + "']").classList.add("tabbuttonactive")
+
+function setbg(bg) {
+    document.querySelectorAll(".tabbg").forEach(e =>  e.classList.remove("tabbuttonactive"));
+    localStorage.setItem("background", bg)
+    console.log('set ' + bg)
+    document.querySelector(".tabbg[bg='" + bg + "']").classList.add("tabbuttonactive")
+    if (bg == "default") {
+    loadParticles()
+    } else if (bg == "stars") {
+    loadStars()
+    } else if (bg == "none") {
+    destroySquares()
+    destroyParticles()
+    } else if (bg == "squares") {
+        
+    loadSquares()
+    }
+    }
+
+    var sel = localStorage.getItem("plink") || "none"
     document.querySelector(".tabp[p='" + sel + "']").classList.add("tabbuttonactive")
 
     function pselection(link) {
@@ -196,7 +297,10 @@ const validURL = (str) => {
         TabTitle("Zoom")
         TabIcon("https://st1.zoom.us/zoom.ico")
       }
- 
+      function setcanvas() {
+        TabTitle("Canvas")
+        TabIcon("https://du11hjcvx0uqb.cloudfront.net/favicon.ico")
+      }
       
       function setreset() {
         localStorage.removeItem("title")
