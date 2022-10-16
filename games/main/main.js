@@ -1,5 +1,5 @@
-const currentTitle = localStorage.getItem('storedtitle');
-const currentIcon = localStorage.getItem('icon');
+var currentTitle = localStorage.getItem('storedtitle');
+var currentIcon = localStorage.getItem('icon');
 
 document.title = currentTitle;
 document.head.querySelector("link[rel=icon]").href = currentIcon;
@@ -38,7 +38,7 @@ const changeTabIcon = () => {
 
 //Clears Tab Icon and Title
 const resetTabSettings = () => {
-    let items = ["icon", "title"];
+    let items = ["icon", "storedtitle"];
     items.forEach(item =>
     window.localStorage.removeItem(item));
     window.location.reload();
