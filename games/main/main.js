@@ -1,4 +1,5 @@
-
+const newTitle = localStorage.getItem('storedtitle');
+document.title = newTitle;
 
 
 const changeTabTitle = () => {
@@ -15,11 +16,10 @@ const changeTabTitle = () => {
     newtitle.value = ""; //clear input
 };
 
-const newTitle = localStorage.getItem('storedtitle');
 
 
-if (localStorage.getItem('storedtitle') == ""){
- console.log(no stored title)   
-}else{
-document.title = newTitle;
-}
+//if (localStorage.getItem('storedtitle') == ""){
+// console.log(no stored title)   
+//}else{
+//document.title = newTitle;
+//}
