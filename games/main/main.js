@@ -2,7 +2,10 @@ var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
 document.title = currentTitle;
-
+window.addEventListener('load', (event) => {
+  console.log('page is fully loaded now atempting to restore favicon');
+     changeFavicon(currentIcon);
+});
 
 const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
@@ -65,7 +68,6 @@ document.head || (document.head = document.getElementsByTagName('head')[0]);
     document.head.appendChild(link);
    }
 
-  
-   changeFavicon(storedIcon);
+
    
 
