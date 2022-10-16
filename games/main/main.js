@@ -1,12 +1,11 @@
 
 
-
+const newTitle = localStorage.getItem('storedtitle');
 
 
 if (localStorage.getItem('storedtitle') == ""){
  console.log(no stored title)   
 }else{
-const newTitle = localStorage.getItem('storedtitle');
 document.title = newTitle;
 }
 
