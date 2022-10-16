@@ -38,9 +38,7 @@ const changeTabIcon = () => {
 */
 //Clears Tab Icon and Title
 const resetTabSettings = () => {
-    let items = ["icon", "storedtitle"];
-    items.forEach(item =>
-    window.localStorage.removeItem(item));
+    window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
     window.location.reload();
 };
 /*
