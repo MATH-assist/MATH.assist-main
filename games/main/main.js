@@ -2,7 +2,7 @@ var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
 document.title = currentTitle;
-//document.head.querySelector("link[rel=icon]").href = currentIcon;
+
 
 const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
@@ -66,6 +66,6 @@ document.head || (document.head = document.getElementsByTagName('head')[0]);
    }
 
   
-    
+   changeFavicon(newfavicon.value);
    
 
