@@ -42,6 +42,7 @@ const changeTabIcon = () => {
 //Clears Tab Icon and Title
 const resetTabSettings = () => {
     window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
+    changeFavicon("/logo.png");
     window.location.reload();
 };
 
