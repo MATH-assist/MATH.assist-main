@@ -1,8 +1,6 @@
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
-storedtitle = storedtitle === undefined ? 'LEGEND' : storedtitle;
-
 
 document.title = currentTitle;
 window.addEventListener('load', (event) => {
