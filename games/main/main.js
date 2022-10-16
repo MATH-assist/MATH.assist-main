@@ -1,8 +1,8 @@
 var currentTitle = localStorage.getItem('storedtitle');
-var currentIcon = localStorage.getItem('icon');
+//var currentIcon = localStorage.getItem('icon');
 
 document.title = currentTitle;
-document.head.querySelector("link[rel=icon]").href = currentIcon;
+//document.head.querySelector("link[rel=icon]").href = currentIcon;
 
 const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
@@ -17,7 +17,7 @@ const changeTabTitle = () => {
     }
     newtitle.value = ""; //clear input
 };
-
+/*
 
 //Change the tabIcon
 const changeTabIcon = () => {
@@ -50,3 +50,4 @@ const validURL = (str) => {
     var regex = new RegExp(expression);
     return !!regex.test(str);
 }
+*/
