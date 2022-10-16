@@ -6,12 +6,12 @@ document.title = currentTitle;
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded now atempting to restore favicon and add a site name');
      changeFavicon(currentIcon);
-  storedtitle = storedtitle === undefined ? 'LEGEND' : storedtitle;
- // if (storedtitle === 'undefined') {
-   //     window.document.title = "LEGEND"
-//  }else{
-  //  window.document.title = storedtitle
- // }
+  
+ if (localStorage.getItem("storedtitle") == null) {
+        window.document.title = "LEGEND"
+ }else{
+    window.document.title = storedtitle
+  }
 });
 
 const changeTabTitle = () => {
