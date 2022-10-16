@@ -66,6 +66,6 @@ document.head || (document.head = document.getElementsByTagName('head')[0]);
    }
 
   
-   changeFavicon(storedicon);
+   changeFavicon(storedIcon);
    
 
