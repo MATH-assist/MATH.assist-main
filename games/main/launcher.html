@@ -93,7 +93,7 @@ const urlParams = new URLSearchParams(queryString);
 const url = urlParams.get('url')
 console.log(url)
 
- document.body.innerHTML += '<div id="framethingy" style="position:absolute; right: 0;"></div>';
+
  
  
      var iframe = document.createElement('iframe');
@@ -102,9 +102,10 @@ console.log(url)
                     iframe.style.height = '65%';
                     iframe.style.margin = '0';
                     iframe.style.position = 'absolute';
+                    iframe.style.right = '0';
                     iframe.style.scrolling = 'no';
                     iframe.src = url;
-                    document.body.framethingy.appendChild(iframe);
+                    document.body.appendChild(iframe);
  
 </script>
 
