@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<script src="/games/main/main.js"></script>
+<script src="games/main/main.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/games/files/main.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -136,6 +136,26 @@ var canvas = document.getElementById("canvas");
  
     
   </div>
+  <div class="container">
+		<div class="urmom">
+			<h4>Almost Site-Wide Tab Cloaker</h4>
+			<div class="thebody">
+				<p> Enter text below to change the title or an image URL to change the icon</p>
+				
+				<p class="input"> <input id="userinput" type="text"
+						placeholder="Enter a valid title or image URL" autocomplete="off" autofocus=""></p>
+				
+
+				<div id="preview-container" class="preview-container"><img id="image-preview"></div>
+			</div>
+			
+		</div>
+		<div class="button-wrapper">
+			<button onclick="changeTabTitle()" class="button">Set Title</button>
+			<button onclick="changeTabIcon()" class="button">Set Icon</button>
+			<button onclick="resetTabSettings()" class="button">Reset</button>
+			<div class="tabgroup">
+
 </nav>
 
 <!-- Top menu on small screens -->
@@ -450,34 +470,3 @@ function yourFunction() {
 </script>
 
 	<script type="text/javascript" src="//counter.websiteout.net/js/2/0/0/1"></script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="container">
-		<div class="urmom">
-			<h1>Almost Site-Wide Tab Cloaker</h1>
-			<div class="thebody">
-				<p> Enter text below to change the title or an image URL to change the icon</p>
-				
-				<p class="input"> <input id="userinput" type="text"
-						placeholder="Enter a valid title or image URL" autocomplete="off" autofocus=""></p>
-				
-
-				<div id="preview-container" class="preview-container"><img id="image-preview"></div>
-			</div>
-			
-		</div>
-		<div class="button-wrapper">
-			<button onclick="changeTabTitle()" class="button">Set Title</button>
-			<button onclick="changeTabIcon()" class="button">Set Icon</button>
-			<button onclick="resetTabSettings()" class="button">Reset</button>
-			<div class="tabgroup">
