@@ -13,10 +13,14 @@ https://mathassist.ga
 
 
 
-to do
+#to do#
+
+
 add 
 
+
 <script src="/games/main/main.js"></script>
+
 
 to every html file
 
