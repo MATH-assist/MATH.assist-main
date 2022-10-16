@@ -1,7 +1,7 @@
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
-myVar = storedtitle === undefined ? 'LEGEND' : storedtitle;
+storedtitle = storedtitle === undefined ? 'LEGEND' : storedtitle;
 
 
 document.title = currentTitle;
