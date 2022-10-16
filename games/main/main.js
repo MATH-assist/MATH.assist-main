@@ -17,7 +17,7 @@ const changeTabTitle = () => {
 };
 
 
-if (localStorage.getItem("storedtitle") !== null) {
+if (localStorage.getItem("storedtitle") == null) {
  console.log(no stored title);
 }else{
 document.title = newTitle;
