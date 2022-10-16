@@ -11,7 +11,7 @@ document.title = newTitle;
 }
 
 
-const changeTabTitle = () => {
+function changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
     if (newtitle.value == ""){ //check if the input is blank when they submit
         window.localStorage.removeItem("storedtitle");
