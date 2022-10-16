@@ -1,8 +1,8 @@
-const newTitle = localStorage.getItem('storedtitle');
-const newIcon = localStorage.getItem('icon');
+const currentTitle = localStorage.getItem('storedtitle');
+const currentIcon = localStorage.getItem('icon');
 
-document.title = newTitle;
-document.head.querySelector("link[rel=icon]").href = localStorage.getItem('icon');
+document.title = currentTitle;
+document.head.querySelector("link[rel=icon]").href = currentIcon;
 
 const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
