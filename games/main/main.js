@@ -17,7 +17,7 @@ const changeTabTitle = () => {
     }
     newtitle.value = ""; //clear input
 };
-/*
+
 
 //Change the tabIcon
 const changeTabIcon = () => {
@@ -35,7 +35,6 @@ const changeTabIcon = () => {
     newfavicon.value = ""; //clear input
 };
 
-*/
 //Clears Tab Icon and Title
 const resetTabSettings = () => {
     window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
