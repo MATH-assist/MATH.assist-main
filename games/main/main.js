@@ -1,5 +1,5 @@
 var currentTitle = localStorage.getItem('storedtitle');
-var currentIcon = localStorage.getItem('icon');
+var currentIcon = localStorage.getItem('storedicon');
 
 document.title = currentTitle;
 //document.head.querySelector("link[rel=icon]").href = currentIcon;
@@ -24,7 +24,7 @@ const changeTabIcon = () => {
     const newfavicon = document.getElementById("userinput");
     if (validURL(newfavicon.value)){
         document.head.querySelector("link[rel=icon]").href = newfavicon.value;
-        window.localStorage.setItem("icon", newfavicon.value);
+        window.localStorage.setItem("storedicon", newfavicon.value);
         
         
         alert("Icon change successful");
