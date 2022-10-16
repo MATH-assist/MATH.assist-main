@@ -1,5 +1,4 @@
-var title = "test";
+const newTitle = localStorage.getItem('storedtitle');
 
-document.title = title;
+document.title = newTitle;
 
-console.log(title)
