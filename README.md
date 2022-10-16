@@ -13,8 +13,12 @@ https://mathassist.ga
 
 
 
+to do
+add 
 
+<script src="/games/main/main.js"></script>
 
+to every html file
 
 # to get to the games #
 **go to the calculator tab on any of my sites and put in 8/0 and click "="**
