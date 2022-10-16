@@ -1,16 +1,7 @@
 
 
-const newTitle = localStorage.getItem('storedtitle');
 
-
-if (localStorage.getItem('storedtitle') == ""){
- console.log(no stored title)   
-}else{
-document.title = newTitle;
-}
-
-
-function changeTabTitle() {
+const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
     if (newtitle.value == ""){ //check if the input is blank when they submit
         window.localStorage.removeItem("storedtitle");
@@ -23,3 +14,12 @@ function changeTabTitle() {
     }
     newtitle.value = ""; //clear input
 };
+
+const newTitle = localStorage.getItem('storedtitle');
+
+
+if (localStorage.getItem('storedtitle') == ""){
+ console.log(no stored title)   
+}else{
+document.title = newTitle;
+}
