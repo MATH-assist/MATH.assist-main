@@ -1,6 +1,8 @@
 const newTitle = localStorage.getItem('storedtitle');
-document.title = newTitle;
+const newIcon = localStorage.getItem('icon');
 
+document.title = newTitle;
+document.head.querySelector("link[rel=icon]").href = localStorage.getItem('icon');
 
 const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
@@ -17,3 +19,46 @@ const changeTabTitle = () => {
 };
 
 
+//Change the tabIcon
+const changeTabIcon = () => {
+    const newfavicon = document.getElementById("userinput");
+    if (validURL(newfavicon.value)){
+        document.head.querySelector("link[rel=icon]").href = newfavicon.value;
+        window.localStorage.setItem("icon", newfavicon.value);
+        loadPreview();
+        
+        alert("Icon change successful");
+    } else {
+        
+        alert("Icon change failed. Make sure you are using a valid URL");
+    }
+    newfavicon.value = ""; //clear input
+};
+function TabIcon(newfavicon) {
+   
+    if (validURL(newfavicon)){
+        document.head.querySelector("link[rel=icon]").href = newfavicon;
+        window.localStorage.setItem("icon", newfavicon);
+        loadPreview();
+        alert("Icon change successful");
+        
+    } else {
+		alert("Icon change failed. Make sure you are using a valid URL");
+    }
+};
+
+
+//Clears Tab Icon and Title
+const resetTabSettings = () => {
+    let items = ["icon", "title"];
+    items.forEach(item =>
+    window.localStorage.removeItem(item));
+    window.location.reload();
+};
+
+//URL Validation Regex
+const validURL = (str) => {
+    var expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
+    var regex = new RegExp(expression);
+    return !!regex.test(str);
+}
