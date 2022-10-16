@@ -1,24 +1,20 @@
-const siteName = "LEGEND";
-
-
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
 document.title = currentTitle;
 window.addEventListener('load', (event) => {
-  console.log('page is fully loaded now atempting to restore favicon');
+  console.log('page is fully loaded now atempting to restore favicon and add a site name');
      changeFavicon(currentIcon);
-  if (currentTitle == ""){
-    window.localStorage.setItem("storedtitle", siteName);//set default site name
-        window.document.title = siteName
+  window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
+        window.document.title = "LEGEND"
   
 });
 
 const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
     if (newtitle.value == ""){ //check if the input is blank when they submit
-        window.localStorage.setItem("storedtitle", siteName);//set default site name
-        window.document.title = siteName
+        window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
+        window.document.title = "LEGEND"
         alert("No title entered. Default applied");
     } else {
         window.localStorage.setItem("storedtitle", newtitle.value);
@@ -27,8 +23,6 @@ const changeTabTitle = () => {
     }
     newtitle.value = ""; //clear input
 };
-
-
 //Change the tabIcon
 const changeTabIcon = () => {
     const newfavicon = document.getElementById("userinput");
@@ -47,7 +41,7 @@ const changeTabIcon = () => {
 
 //Clears Tab Icon and Title
 const resetTabSettings = () => {
-    window.localStorage.setItem("storedtitle", siteName);//set default site name
+    window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
     window.location.reload();
 };
 
@@ -57,12 +51,7 @@ const validURL = (str) => {
     var regex = new RegExp(expression);
     return !!regex.test(str);
 }
-
-
-
-
 document.head || (document.head = document.getElementsByTagName('head')[0]);
-
    function changeFavicon(src) {
     var link = document.createElement('link'),
         oldLink = document.getElementById('dynamic-favicon');
@@ -72,9 +61,5 @@ document.head || (document.head = document.getElementsByTagName('head')[0]);
     if (oldLink) {
      document.head.removeChild(oldLink);
     }
-    document.head.appendChild(link);
-   }
-
-
-   
-
+document.head.appendChild(link);
+}
