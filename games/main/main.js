@@ -25,7 +25,7 @@ const changeTabIcon = () => {
     if (validURL(newfavicon.value)){
         document.head.querySelector("link[rel=icon]").href = newfavicon.value;
         window.localStorage.setItem("icon", newfavicon.value);
-        loadPreview();
+        
         
         alert("Icon change successful");
     } else {
@@ -33,18 +33,6 @@ const changeTabIcon = () => {
         alert("Icon change failed. Make sure you are using a valid URL");
     }
     newfavicon.value = ""; //clear input
-};
-function TabIcon(newfavicon) {
-   
-    if (validURL(newfavicon)){
-        document.head.querySelector("link[rel=icon]").href = newfavicon;
-        window.localStorage.setItem("icon", newfavicon);
-        loadPreview();
-        alert("Icon change successful");
-        
-    } else {
-		alert("Icon change failed. Make sure you are using a valid URL");
-    }
 };
 
 
