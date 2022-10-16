@@ -92,6 +92,15 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const url = urlParams.get('url')
 console.log(url)
+ 
+     var iframe = document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.src = url;
+                    document.body.appendChild(iframe);
+ 
 </script>
 
 </body>
