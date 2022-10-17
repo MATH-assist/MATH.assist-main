@@ -446,27 +446,32 @@ function yourFunction() {
 }
 </script>
 	
-	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    new Darkmode().showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-  
-  const options = {
-  bottom: '64px', // default: '32px'
-  right: 'unset', // default: '32px'
-  left: '32px', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: ' #000000',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
 
-}
+<div class="gfq-wrap">
+    <div id="setpan" class="gfq-panel">
+        <div class="container">
+		<div class="urmom">
+			<h4>Almost Site-Wide Tab Cloaker</h4>
+			<div class="thebody">
+				<p> Enter text below to change the title or an image URL to change the icon</p>
+				
+				<p class="input"> <input id="userinput" type="text"
+						placeholder="Enter a valid title or image URL" autocomplete="off" autofocus=""></p>
+				
 
+				<div id="preview-container" class="preview-container"><img id="image-preview"></div>
+			</div>
+			
+		</div>
+		<div class="button-wrapper">
+			<button onclick="changeTabTitle()" class="button">Set Title</button>
+			<button onclick="changeTabIcon()" class="button">Set Icon</button>
+			<button onclick="resetTabSettings()" class="button">Reset</button>
+			<div class="tabgroup">
+    <div class="gfq-badge">
+        <img onclick="openSettings()" src="https://math-assist.github.io/logo.png" alt="Icon"/>
+    </div>
+</div>
 
-
-</script>
 
 	<script type="text/javascript" src="//counter.websiteout.net/js/2/0/0/1"></script>
