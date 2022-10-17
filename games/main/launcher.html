@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <script src="/games/main/main.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://mathassist.ga/games/files/main.css">
+<link rel="stylesheet" href="/games/files/main.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="shortcut icon" href="https://github.com/MegaTheLEGEND/html-m.a/blob/main/EmbeddedImage.png?raw=true">
 <title>legend</title>
@@ -17,7 +17,75 @@
 
   gtag('config', 'G-53234KX3PG');
 </script>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body style="background-color:black;">
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-white w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+   <a href="/">
+<img src="https://github.com/MegaTheLEGEND/html-m.a/blob/main/EmbeddedImage.png?raw=true" alt="logo" style="width:auto;height:100px;">
+</a>
+    <h3 class="w3-padding-64"><b>MATH.assist</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="./" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Home</a> 
+    <a href="games/rr.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Fun stuff</a> 
+    <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Contact</a> 
+    <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">About</a> 
+    <a href="disserver.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">discord server</a> 
+    <a href="https://classroom.google.com/c/NDY0NzI4Nzg0OTYy?cjc=uoetjll" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">google classroom</a>
+    <a href="calculator.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">calculator</a>
+   
     
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header id='dumbthing' class="w3-container w3-top w3-hide-large w3-black w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-grey w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Math.assist</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+
+<!-- End page content -->
+</div>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+ 
 <script>
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -58,85 +126,63 @@ console.log(url)
 function makeFullScreen() {
     document.getElementsByTagName("iframe")[0].className = "fullScreen";
     var elem = document.body;
-                     iframe.style.width = '100%';
-                     iframe.style.height = '100%';
-                     iframe.style.right = '0px';
- document.getElementById('iframe').contentWindow.location.reload();
-    requestFullScreen(elem);
-}
- 
- 
-</script>
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-body {font-size:16px;}
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-.w3-half img:hover{opacity:1}
-</style>
-<body style="background-color:black;">
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-white w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div class="w3-container">
-   <a href="/">
-<img src="https://github.com/MegaTheLEGEND/html-m.a/blob/main/EmbeddedImage.png?raw=true" alt="logo" style="width:auto;height:100px;">
-</a>
-    <h3 class="w3-padding-64"><b>MATH.assist</b></h3>
-  </div>
-  <div class="w3-bar-block">
-    <a href="./" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Home</a> 
-    <a href="games/rr.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Fun stuff</a> 
-    <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Contact</a> 
-    <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">About</a> 
-    <a href="disserver.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">discord server</a> 
-    <a href="https://classroom.google.com/c/NDY0NzI4Nzg0OTYy?cjc=uoetjll" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">google classroom</a>
-    <a href="calculator.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">calculator</a>
    
-    
-  </div>
-</nav>
+    requestFullScreen(elem);
+    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.style.position = 'absolute';
+                    iframe.style.right = '0px';
+                    iframe.src = url;
 
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-black w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-grey w3-margin-right" onclick="w3_open()">☰</a>
-  <span>Math.assist</span>
-</header>
+  const mySidebar = document.getElementById('mySidebar');
+  const myOverlay = document.getElementById('myOverlay');
+ 
+   mySidebar.style.opacity = '0';
+   myOverlay.style.opacity = '0';
+   
+   
+   var nodes = document.getElementById("dumbthing").getElementsByTagName('*');
+for(var i = 0; i < nodes.length; i++){
+     nodes[i].disabled = true;
+}
+   
+   
+   
+ if (document.addEventListener)
+{
+ document.addEventListener('fullscreenchange', exitHandler, false);
+ document.addEventListener('mozfullscreenchange', exitHandler, false);
+ document.addEventListener('MSFullscreenChange', exitHandler, false);
+ document.addEventListener('webkitfullscreenchange', exitHandler, false);
+}
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-  <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="showcase">
-
-<!-- End page content -->
-</div>
-
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
+function exitHandler()
+{
+ if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
+ {
+     const mySidebar = document.getElementById('mySidebar');
+  const myOverlay = document.getElementById('myOverlay');
+   mySidebar.style.opacity = '100';
+   myOverlay.style.opacity = '100';
+   
+   
+                       iframe.style.border = 'none';
+                    iframe.style.width = '65%';
+                    iframe.style.height = '65%';
+                    iframe.style.margin = '0';
+                    iframe.style.position = 'absolute';
+                    iframe.style.right = '50px';
+                    iframe.style.scrolling = 'no';
+                    iframe.src = url;
+   
+ }
+}
+  
 }
  
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+ 
 </script>
- 
-
 <p align="right" >
   <input type="button" value="fullscreen" onclick="makeFullScreen()" />
 </p>
