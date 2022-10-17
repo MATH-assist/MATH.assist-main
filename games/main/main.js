@@ -69,3 +69,30 @@ document.head || (document.head = document.getElementsByTagName('head')[0]);
     }
 document.head.appendChild(link);
 }
+
+
+function openSettings() {
+   var varygoodvar = document.getElementById("setpan");
+   varygoodvar.classList.toggle("panel-active");
+}
+
+
+
+window.addEventListener("load", () => {
+
+const div2 = document.createElement('div');
+div2.innerHTML = `<div class="gfq-wrap">
+    <div id="setpan" class="gfq-panel">
+        <iframe loading="lazy" src="https://www.example.com/" name="iFrame Name" scrolling="No" height="500px" width="100%" style="border: none;"></iframe>
+    </div>
+    <div class="gfq-badge">
+        <img onclick="openSettings()" src="/logo.png" alt="Icon"/>
+    </div>
+</div>
+`;
+
+document.body.insertAdjacentElement('afterbegin', div2);
+
+ 
+
+});
