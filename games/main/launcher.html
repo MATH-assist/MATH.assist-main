@@ -192,6 +192,16 @@ window.addEventListener('load', (event) => {
  
 
 
+ function killFullScreen() {
+    // Supports most browsers and their versions.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{ESCAPE}");
+        }
+    }
+}
+ 
+ 
 
 }
  
@@ -201,7 +211,7 @@ window.addEventListener('load', (event) => {
   <input id='enterfs' type="button" value="fullscreen" onclick="makeFullScreen()" />
 </p>
 <p align="right" >
-  <input id='exitfs' type="button" value="exit fullscreen" onclick="makeFullScreen()" />
+  <input id='exitfs' type="button" value="exit fullscreen" onclick="killFullScreen()" />
 </p>
 <!-- Top menu on small screens -->
 <header id='dumbthing' class="w3-container w3-top w3-hide-large w3-black w3-xlarge w3-padding">
