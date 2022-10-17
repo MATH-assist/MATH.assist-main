@@ -84,18 +84,41 @@ function openSettings() {
 }
 
 
-/*
+
 window.addEventListener("load", () => {
 
 const div2 = document.createElement('div');
 div2.innerHTML = `<div class="gfq-wrap">
-    <div id="setpan" class="gfq-panel">
-        
-    <div class="gfq-badge">
-        <img onclick="openSettings()" src="https://math-assist.github.io/logo.png" alt="Icon"/>
-    </div>
+ <div id="setpan" class="gfq-panel">
+     
+ 
+
+			<h4>Almost Site-Wide Tab Cloaker</h4>
+			<div class="thebody">
+				<p> Enter text below to change the title or an image URL to change the icon</p>
+				
+				<p class="input"> <input id="userinput" type="text"
+						 autocomplete="off" autofocus=""></p>
+				
+
+				<div id="preview-container" class="preview-container"><img id="image-preview"></div>
+			</div>
+			
+	
+		<div class="button-wrapper">
+			<button onclick="changeTabTitle()" class="button">Set Title</button>
+			<button onclick="changeTabIcon()" class="button">Set Icon</button>
+			<button onclick="resetTabSettings()" class="button">Reset</button>
+			
+     
+     
+    
 </div>
-`;
+    
+    </div>
+     <div class="gfq-badge">
+        <img onclick="openSettings()" src="https://math-assist.github.io/logo.png" alt="Icon"/>
+    </div> `;
 
 document.body.insertAdjacentElement('afterbegin', div2);
 
@@ -104,4 +127,4 @@ document.body.insertAdjacentElement('afterbegin', div2);
 });
 
 
-*/
+
