@@ -78,34 +78,22 @@ function openSettings() {
 
 
 
+function openSettings() {
+   var varygoodvar = document.getElementById("setpan");
+   varygoodvar.classList.toggle("panel-active");
+}
+
+
+
 window.addEventListener("load", () => {
 
 const div2 = document.createElement('div');
 div2.innerHTML = `<div class="gfq-wrap">
     <div id="setpan" class="gfq-panel">
-         </div>
-  <div class="container">
-		<div class="urmom">
-			<h4>Almost Site-Wide Tab Cloaker</h4>
-			<div class="thebody">
-				<p> Enter text below to change the title or an image URL to change the icon</p>
-				
-				<p class="input"> <input id="userinput" type="text"
-						placeholder="Enter a valid title or image URL" autocomplete="off" autofocus=""></p>
-				
-
-				<div id="preview-container" class="preview-container"><img id="image-preview"></div>
-			</div>
-			
-		</div>
-		<div class="button-wrapper">
-			<button onclick="changeTabTitle()" class="button">Set Title</button>
-			<button onclick="changeTabIcon()" class="button">Set Icon</button>
-			<button onclick="resetTabSettings()" class="button">Reset</button>
-			<div class="tabgroup">
+        <iframe loading="lazy" src="https://www.example.com/" name="iFrame Name" scrolling="No" height="500px" width="100%" style="border: none;"></iframe>
     </div>
     <div class="gfq-badge">
-        <img onclick="openSettings()" src="/logo.png" alt="Icon"/>
+        <img onclick="openSettings()" src="https://math-assist.github.io/logo.png" alt="Icon"/>
     </div>
 </div>
 `;
