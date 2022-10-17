@@ -58,8 +58,10 @@ console.log(url)
 function makeFullScreen() {
     document.getElementsByTagName("iframe")[0].className = "fullScreen";
     var elem = document.body;
-                     iframe.style.width = '65%';
-                    iframe.style.height = '65%';
+                     iframe.style.width = '100%';
+                     iframe.style.height = '100%';
+                     iframe.style.right = '0px';
+ document.getElementById('iframe').contentWindow.location.reload();
     requestFullScreen(elem);
 }
  
