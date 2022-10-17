@@ -17,11 +17,65 @@
   gtag('config', 'G-53234KX3PG');
 </script>
     
+<script>
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const url = urlParams.get('url')
+console.log(url)
+
+
+ 
+ 
+     var iframe = document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '65%';
+                    iframe.style.height = '65%';
+                    iframe.style.margin = '0';
+                    iframe.style.position = 'absolute';
+                    iframe.style.right = '50px';
+                    iframe.style.scrolling = 'no';
+                    iframe.src = url;
+                    document.body.appendChild(iframe);
+ 
+ 
+ 
+ 
+ function requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
+function makeFullScreen() {
+    document.getElementsByTagName("iframe")[0].className = "fullScreen";
+    var elem = document.body;
+    requestFullScreen(elem);
+}
+ 
+ 
+</script>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
+ 
+ 
+ iframe.fullScreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 </style>
 <body>
 <body style="background-color:black;">
