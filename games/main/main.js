@@ -96,3 +96,10 @@ document.body.insertAdjacentElement('afterbegin', div2);
  
 
 });
+
+
+window.addEventListener('load', (event) => {
+  
+rel="stylesheet" href="/games/files/main.css"
+  
+});
