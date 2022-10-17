@@ -46,11 +46,10 @@ body {font-size:16px;}
   </div>
 </nav>
 
-<!-- Top menu on small screens -->
-<header id='dumbthing' class="w3-container w3-top w3-hide-large w3-black w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-grey w3-margin-right" onclick="w3_open()">☰</a>
-  <span>Math.assist</span>
-</header>
+
+
+
+
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -87,6 +86,10 @@ function onClick(element) {
 </script>
  
 <script>
+
+
+
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const url = urlParams.get('url')
@@ -137,10 +140,12 @@ function makeFullScreen() {
 
   const mySidebar = document.getElementById('mySidebar');
   const myOverlay = document.getElementById('myOverlay');
- 
+  const enterfs = document.getElementById('enterfs');
+   const exitfs = document.getElementById('exitfs');
    mySidebar.style.opacity = '0';
    myOverlay.style.opacity = '0';
-   
+   enterfs.style.opacity = '0';
+   exitfs.style.opacity = '100';
    
    var nodes = document.getElementById("dumbthing").getElementsByTagName('*');
 for(var i = 0; i < nodes.length; i++){
@@ -165,6 +170,8 @@ function exitHandler()
   const myOverlay = document.getElementById('myOverlay');
    mySidebar.style.opacity = '100';
    myOverlay.style.opacity = '100';
+   enterfs.style.opacity = '100';
+   exitfs.style.opacity = '0';
    
    
                        iframe.style.border = 'none';
@@ -178,14 +185,29 @@ function exitHandler()
    
  }
 }
-  
+window.addEventListener('load', (event) => {
+
+  exitfs.style.opacity = '0';
+});
+ 
+
+
+
 }
  
  
 </script>
 <p align="right" >
-  <input type="button" value="fullscreen" onclick="makeFullScreen()" />
+  <input id='enterfs' type="button" value="fullscreen" onclick="makeFullScreen()" />
 </p>
+<p align="right" >
+  <input id='exitfs' type="button" value="exit fullscreen" onclick="makeFullScreen()" />
+</p>
+<!-- Top menu on small screens -->
+<header id='dumbthing' class="w3-container w3-top w3-hide-large w3-black w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-grey w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Math.assist</span>
+</header>
 </body>
 </html>
 
