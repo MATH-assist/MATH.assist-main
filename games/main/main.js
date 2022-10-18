@@ -166,12 +166,14 @@ window.localStorage.setItem("darkmode", "false");
 	document.getElementById('darklight').innerHTML = "Dark";
 
 
-}else{
+}else if (localStorage.getItem("darkmode") == "true"){
 
 	document.getElementById('darklight').innerHTML = "Light";
 	
 	
-}
+}else{
+	
+	document.getElementById('darklight').innerHTML = "Dark";
 }
 
 
