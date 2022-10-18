@@ -92,7 +92,7 @@ div2.innerHTML = `<div class="gfq-wrap">
  <div id="setpan" class="gfq-panel">
      
  
-
+			<button class="tab-button">Home</button>
 			<h4>Almost Site-Wide Tab Cloaker</h4>
 			<div id="exp-menu-thebody" class="thebody">
 				<p> Enter text below to change the title or an image URL to change the icon</p>
@@ -116,7 +116,7 @@ div2.innerHTML = `<div class="gfq-wrap">
     
     </div>
      <div class="gfq-badge">
-        <img onclick="openSettings()" src="https://math-assist.github.io/logo.png" alt="Icon"/>
+        <img onclick="openSettings()" src="/logo.png" alt="Icon"/>
     </div> `;
 
 document.body.insertAdjacentElement('afterbegin', div2);
