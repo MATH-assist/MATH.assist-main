@@ -151,9 +151,8 @@ if (localStorage.getItem("darkmode") == "false"){
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
-	
-
-var styleSheet = document.createElement("style")
+	//add style to page
+var styleSheet = document.createElement("darkstyles")
 styleSheet.innerText = styles
 document.head.appendChild(styleSheet)
 
@@ -163,6 +162,11 @@ document.head.appendChild(styleSheet)
 	document.getElementById('darklight').innerHTML = "Dark";
 	console.log("setting button to Dark");
 	console.log("the page should be Light");
+	//add style to page
+var styleSheet = document.createElement("lightstyles")
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)
+
 	
 }
 }
