@@ -92,7 +92,7 @@ div2.innerHTML = `<div class="gfq-wrap">
  <div id="setpan" class="gfq-panel">
      
  			<input type="button" class="tab-button" onclick="location.href='/games/main';" value="Home" />
-			<button onclick="darkmode()" class="tab-button">null</button>
+			<button onclick="darkmode()" id="darklight" class="tab-button">null</button>
 			<button onclick="yourFunction()" class="tab-button">Click Me</button>
 			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
@@ -146,17 +146,20 @@ function darkmode() {
 if (localStorage.getItem("darkmode") == null){
 	
 	window.localStorage.setItem("darkmode", "true");
-	
+	document.getElementById('darklight').innerHTML = "Light";
 
 
 }else{
 
 	localStorage.removeItem('darkmode');
-	
+	document.getElementById('darklight').innerHTML = "Dark";
 	
 	
 }
 }
+
+
+
 
 
 
