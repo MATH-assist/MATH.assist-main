@@ -152,7 +152,7 @@ if (localStorage.getItem("darkmode") == "false"){
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
 	//add style to page
-var colorofclock = "#1a1a1a";
+ctx.fillStyle = "#1a1a1a";
 var styles = `
 	body { 
 	background-color: #1a1a1a;
@@ -184,7 +184,7 @@ document.body.appendChild(styleSheet)
 	console.log("the page should be Light");
 	//add style to page
 	
-	var colorofclock = "white";
+	ctx.fillStyle = "white";
 		var lightstyles = `
 	body { 
 	background-color: white;
@@ -226,7 +226,7 @@ window.localStorage.setItem("darkmode", "false");
 console.log("setting button to Dark");
 console.log("the page should be Light");
 		//set new style
-		var colorofclock = "white";
+		ctx.fillStyle = "white";
 		var lightstyles = `
 	body { 
 	background-color: white;
@@ -256,7 +256,7 @@ document.body.appendChild(styleSheet1)
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
 	//set new style
-	var colorofclock = "#1a1a1a";
+	ctx.fillStyle = "#1a1a1a";
 	var styles = `
 	body { 
 	background-color: #1a1a1a;
@@ -288,7 +288,7 @@ document.body.appendChild(styleSheet)
 	console.log("setting button to Dark");
 	console.log("the page should be Light");
 	//set new style
-	var colorofclock = "white";
+	ctx.fillStyle = "white";
 	var lightstyles = `
 	body { 
 	background-color: white;
