@@ -92,7 +92,7 @@ div2.innerHTML = `<div class="gfq-wrap">
  <div id="setpan" class="gfq-panel">
      
  
-			<button class="tab-button">Home</button>
+			<button href="/games/main" class="tab-button">Home</button>
 			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
 			<div id="exp-menu-thebody" class="thebody">
