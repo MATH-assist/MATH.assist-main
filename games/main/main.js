@@ -98,7 +98,7 @@ div2.innerHTML = `<div class="gfq-wrap">
 				<p> Enter text below to change the title or an image URL to change the icon</p>
 				
 				<p class="input"> <input id="userinput" type="text"
-						 autocomplete="off" autofocus=""></p>
+						 autocomplete="off" autofocus="" placeholder="Insert tab name or image link"></p>
 				
 
 				<div id="preview-container" class="preview-container"><img id="image-preview"></div>
