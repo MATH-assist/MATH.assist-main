@@ -1,3 +1,4 @@
+
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
@@ -8,9 +9,9 @@ window.addEventListener('load', (event) => {
      changeFavicon(currentIcon);
   
  if (localStorage.getItem("storedtitle") == null) {
-        window.document.title = "LEGEND"
+        window.document.title = "LEGEND";
  }else{
-    window.document.title = storedtitle
+    window.document.title = storedtitle;
   }
 });
 
@@ -18,7 +19,7 @@ const changeTabTitle = () => {
     const newtitle = document.getElementById("userinput");
     if (newtitle.value == ""){ //check if the input is blank when they submit
         window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
-        window.document.title = "LEGEND"
+        window.document.title = "LEGEND";
         alert("No title entered. Default applied");
     } else {
         window.localStorage.setItem("storedtitle", newtitle.value);
@@ -56,7 +57,7 @@ const validURL = (str) => {
     var expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
     var regex = new RegExp(expression);
     return !!regex.test(str);
-}
+};
 document.head || (document.head = document.getElementsByTagName('head')[0]);
    function changeFavicon(src) {
     var link = document.createElement('link'),
@@ -177,5 +178,4 @@ window.localStorage.setItem("darkmode", "false");
 }
 
 
-
-
+};
