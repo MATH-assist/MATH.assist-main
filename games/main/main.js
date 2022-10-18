@@ -159,7 +159,21 @@ if (localStorage.getItem("darkmode") == null){
 }
 
 
+window.onload = function(){
+	if (localStorage.getItem("darkmode") == null){
+	
+	window.localStorage.setItem("darkmode", "true");
+	document.getElementById('darklight').innerHTML = "Light";
 
+
+}else{
+
+	localStorage.removeItem('darkmode');
+	document.getElementById('darklight').innerHTML = "Dark";
+	
+	
+}
+}
 
 
 
