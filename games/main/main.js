@@ -105,9 +105,9 @@ div2.innerHTML = `<div class="gfq-wrap">
 			
 	
 		<div id="title-buttons" class="button-wrapper">
-			<button onclick="changeTabTitle()" class="button">Set Title</button>
-			<button onclick="changeTabIcon()" class="button">Set Icon</button>
-			<button onclick="resetTabSettings()" class="button">Reset</button>
+			<button onclick="changeTabTitle()" class="tab-button">Set Title</button>
+			<button onclick="changeTabIcon()" class="tab-button">Set Icon</button>
+			<button onclick="resetTabSettings()" class="tab-button">Reset</button>
 			
      
      
