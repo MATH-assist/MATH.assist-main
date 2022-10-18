@@ -101,7 +101,7 @@ div2.innerHTML = `<div class="gfq-wrap">
 						 autocomplete="off" autofocus="" placeholder="Insert tab name or image link"></p>
 				
 
-			
+			</div>
 			
 	
 		<div id="title-buttons" class="button-wrapper">
