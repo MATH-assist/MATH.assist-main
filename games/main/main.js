@@ -151,13 +151,22 @@ if (localStorage.getItem("darkmode") == "false"){
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
 	var styles = `
-	body{ 
-	background-color: #232323;
+	body { 
+	background-color: #1a1a1a;
 	}
 	.w3-white,.w3-hover-white:hover { 
 	color: #00adb3!important;
 	background-color: #1a1a1a!important;
 	}
+	#myinput { 
+	background-color: #1a1a1a;
+	border-color: #850000;
+	}
+	#vertical-menu-one a { 
+	background-color: #1a1a1a;
+	color: #06a4aa;
+	}
+	
 	`
 
 var styleSheet = document.createElement("style")
