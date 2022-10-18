@@ -93,6 +93,7 @@ div2.innerHTML = `<div class="gfq-wrap">
      
  
 			<button class="tab-button">Home</button>
+			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
 			<div id="exp-menu-thebody" class="thebody">
 				<p> Enter text below to change the title or an image URL to change the icon</p>
