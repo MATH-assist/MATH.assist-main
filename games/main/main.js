@@ -155,9 +155,9 @@ if (localStorage.getItem("darkmode") == "false"){
 	
 		
 	
-var styleSheet = document.createElement("darkstyles")
-styleSheet.innerText = darkstyles
-document.head.appendChild(styleSheet)
+var styleSheet2 = document.createElement("style")
+styleSheet2.innerText = darkstyles
+document.head.appendChild(styleSheet2)
 
 }else{
 
@@ -170,9 +170,9 @@ document.head.appendChild(styleSheet)
 	
 		
 	
-var styleSheet = document.createElement("lightstyles")
-styleSheet.innerText = lightstyles
-document.head.appendChild(styleSheet)
+var styleSheet1 = document.createElement("style")
+styleSheet1.innerText = lightstyles
+document.head.appendChild(styleSheet1)
 
 	
 }
