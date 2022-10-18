@@ -5,6 +5,7 @@ var currentIcon = localStorage.getItem('storedicon');
 
 document.title = currentTitle;
 window.addEventListener('load', (event) => {
+	
   console.log('page is fully loaded now atempting to restore favicon and add a site name');
      changeFavicon(currentIcon);
   
@@ -150,24 +151,7 @@ if (localStorage.getItem("darkmode") == "false"){
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
-	var styles = `
-	body { 
-	background-color: #1a1a1a;
-	}
-	.w3-white,.w3-hover-white:hover { 
-	color: #00adb3!important;
-	background-color: #1a1a1a!important;
-	}
-	#myinput { 
-	background-color: #1a1a1a;
-	border-color: #850000;
-	}
-	#vertical-menu-one a { 
-	background-color: #1a1a1a;
-	color: #06a4aa;
-	}
 	
-	`
 
 var styleSheet = document.createElement("style")
 styleSheet.innerText = styles
@@ -185,6 +169,44 @@ document.head.appendChild(styleSheet)
 
 
 window.onload = function(){
+	
+	var darkstyles = `
+	body { 
+	background-color: #1a1a1a;
+	}
+	.w3-white,.w3-hover-white:hover { 
+	color: #00adb3!important;
+	background-color: #1a1a1a!important;
+	}
+	#myinput { 
+	background-color: #1a1a1a;
+	border-color: #850000;
+	}
+	#vertical-menu-one a { 
+	background-color: #1a1a1a;
+	color: #06a4aa;
+	}
+	`
+	
+	var lightstyles = `
+	body { 
+	background-color: white;
+	}
+	.w3-white,.w3-hover-white:hover { 
+	color: black!important;
+	background-color: white!important;
+	}
+	#myinput { 
+	background-color: white;
+	border-color: grey;
+	}
+	#vertical-menu-one a { 
+	background-color: white;
+	color: black;
+	}
+	`
+	
+	
 	if (localStorage.getItem("darkmode") == null){
 	
 window.localStorage.setItem("darkmode", "false");
