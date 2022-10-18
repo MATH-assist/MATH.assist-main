@@ -205,7 +205,7 @@ document.body.appendChild(styleSheet)
 	
 var styleSheet1 = document.createElement("style")
 styleSheet1.innerText = lightstyles
-document.head.appendChild(styleSheet1)
+document.body.appendChild(styleSheet1)
 
 	
 }
