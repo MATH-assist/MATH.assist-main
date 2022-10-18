@@ -147,14 +147,16 @@ function darkmode() {
 if (localStorage.getItem("darkmode") == "false"){
 	
 	window.localStorage.setItem("darkmode", "true");
-	document.getElementById('darklight').innerHTML = "Dark";
-
+	document.getElementById('darklight').innerHTML = "Light";
+	console.log("setting button to Light");
+	console.log("the page should be Dark");
 
 }else{
 
 	window.localStorage.setItem("darkmode", "false");
-	document.getElementById('darklight').innerHTML = "Light";
-	
+	document.getElementById('darklight').innerHTML = "Dark";
+	console.log("setting button to Dark");
+	console.log("the page should be Light");
 	
 }
 }
@@ -165,16 +167,21 @@ window.onload = function(){
 	
 window.localStorage.setItem("darkmode", "false");
 	document.getElementById('darklight').innerHTML = "Dark";
-
+console.log("setting button to Dark");
+console.log("the page should be Light");
 
 }else if (localStorage.getItem("darkmode") == "true"){
 
 	document.getElementById('darklight').innerHTML = "Light";
-	
-	
+	console.log("setting button to Light");
+	console.log("the page should be Dark");
 }else{
 	
+
 	document.getElementById('darklight').innerHTML = "Dark";
+	console.log("setting button to Dark");
+	console.log("the page should be Light");
+	
 }
 
 
