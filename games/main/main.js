@@ -141,3 +141,22 @@ if (!document.getElementById(cssId))
 }
 
 
+function darkmode() {
+if (localStorage.getItem("darkmode") == null){
+	
+	window.localStorage.setItem("darkmode", "true");
+	
+
+
+}else{
+
+	localStorage.removeItem('darkmode');
+	
+	
+	
+}
+}
+
+
+
+
