@@ -143,16 +143,16 @@ if (!document.getElementById(cssId))
 
 
 function darkmode() {
-if (localStorage.getItem("darkmode") == null){
+if (localStorage.getItem("darkmode") == "false"){
 	
 	window.localStorage.setItem("darkmode", "true");
-	document.getElementById('darklight').innerHTML = "Light";
+	document.getElementById('darklight').innerHTML = "Dark";
 
 
 }else{
 
-	localStorage.removeItem('darkmode');
-	document.getElementById('darklight').innerHTML = "Dark";
+	window.localStorage.setItem("darkmode", "false");
+	document.getElementById('darklight').innerHTML = "Light";
 	
 	
 }
@@ -162,13 +162,13 @@ if (localStorage.getItem("darkmode") == null){
 window.onload = function(){
 	if (localStorage.getItem("darkmode") == null){
 	
-
-	document.getElementById('darklight').innerHTML = "Light";
+window.localStorage.setItem("darkmode", "false");
+	document.getElementById('darklight').innerHTML = "Dark";
 
 
 }else{
 
-	document.getElementById('darklight').innerHTML = "Dark";
+	document.getElementById('darklight').innerHTML = "Light";
 	
 	
 }
