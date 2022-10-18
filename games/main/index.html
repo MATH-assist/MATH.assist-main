@@ -53,75 +53,210 @@ body {font-size:16px;}
 
 </head>
 <body>
-<canvas id="canvas" width="200" height="200" >cccc</canvas>
+<div class="box3">
+  <div class="rim"></div>
+  <div class="outer"></div>
+  <div class="inner">
+  </div>
+  <div id="clock"></div>
+</div>
+	
+	
 
 <style>
-body {
-			background-color: black;
+.box3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.rim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border: 20px solid #000;
+  border-radius: 50%;
+  animation: shift-rim 8s infinite;
+  z-index: 10;
+}
+
+.outer {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(8,8,71,1) 100%);
+  border: 10px solid #1A23F2;
+  border-radius: 50%;
+  box-sizing: border-box;
+  filter: blur(2px);
+  animation: shift 8s infinite;
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 104%;
+    height: 104%; 
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(2px);
+  }
+}
+
+.inner {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+    background: linear-gradient(to bottom, rgba(8,8,71,1) 0%, rgba(0,0,0,1) 100%);
+  border: 8px solid #1A23F2;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px 10px #000;
+  filter: blur(1px);
+  animation: shift-inner 8s infinite;
+    &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%; 
+    border: 8px solid #000;
+    box-sizing: border-box;
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(5px);
+  }
+   &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 105%;
+    height: 105%; 
+    border: 1px solid #6AAEE9;
+    box-sizing: border-box;
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(3px);
+  }
+}
+
+#clock {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  font-family: 'Baloo Tammudu', cursive;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 0 0 30px #8DCAED;
+  animation: shift-clock 8s infinite;
+}
+
+@keyframes shift {
+  0% {
+    height: 100px;
+  }
+  50% {
+    height: 280px;
+  }
+  100% {
+    height: 100px;
+  }
+}
+
+@keyframes shift-rim {
+  0% {
+    top: 40%;
+    height: 100px;
+  }
+  50% {
+    top: 50%;
+    height: 280px;
+  }
+  100% {
+    top: 40%;
+    height: 100px;
+  }
+}
+
+@keyframes shift-inner {
+  0% {
+    top: -10px;
+    height: 50px;
+  }
+  50% {
+    top: 40px;
+    height: 190px;
+  }
+  100% {
+    top: -10px;
+    height: 50px;
+  }
+}
+
+@keyframes shift-clock {
+  0% {
+    top: -10px;
+    transform: translateX(-50%) scaleY(.2);
+  }
+  50% {
+    top: 100px;
+    transform: translateX(-50%) scaleY(1);
+  }
+  100% {
+    top: -10px;
+    transform: translateX(-50%) scaleY(.2);
+  }
+}
+
 </style>
 
-<script>
-var canvas = document.getElementById("canvas");
-		var ctx = canvas.getContext("2d");
+	
+	
+	<script>
+	
+	(function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    m = checkTime(m);
+  if (m > "12") {
+    var better_h = h-12;
+  }else{
+    var better_h = h
+  }
+  
+  document.getElementById('clock').innerHTML =
+    better_h + ":" + m;
+    var t = setTimeout(startTime, 500);
+})();
 
-		ctx.strokeStyle = 'blue';
-		ctx.lineWidth = 6;
-		ctx.shadowBlur= 4;
-		ctx.shadowColor = 'blue'
-
-		function degToRad(degree){
-			var factor = Math.PI/180;
-			return degree*factor;
-		}
-
-		function renderTime(){
-			var now = new Date();
-			var today = now.toDateString();
-			var time = now.toLocaleTimeString();
-			var hrs = now.getHours();
-			var min = now.getMinutes();
-			var sec = now.getSeconds();
-			var mil = now.getMilliseconds();
-      var ampm = hrs >= 12 ? 'PM' : 'AM';
-			var smoothsec = sec+(mil/1000);
-      var smoothmin = min+(smoothsec/60);
-
-			//Background
-			gradient = ctx.createRadialGradient(250, 250, 5, 250, 250, 300);
-			gradient.addColorStop(0, "white");
-			gradient.addColorStop(0.9, "white");
-			ctx.fillStyle = "rgba(0, 0, 0, 1)";
-			//ctx.fillStyle = 'rgba(00 ,00 , 00, 1)';
-			ctx.fillRect(0, 0, 200, 200);
-			//Hours
-			ctx.beginPath();
-			ctx.arc(100,100,92, degToRad(270), degToRad((hrs*30)-90));
-			ctx.stroke();
-			//Minutes
-			ctx.beginPath();
-			ctx.arc(100,100,80, degToRad(270), degToRad((smoothmin*6)-90));
-			ctx.stroke();
-			//Seconds
-			ctx.beginPath();
-			ctx.arc(100,100,68, degToRad(270), degToRad((smoothsec*6)-90));
-			ctx.stroke();
-			//Date
-			ctx.font = "13.5px Helvetica";
-			ctx.fillStyle = 'green'
-			ctx.fillText(today, 44, 98);
-			//Time
-			ctx.font = "13.5px Helvetica Bold";
-			ctx.fillStyle = 'green';
-			ctx.fillText(hrs+":"+min+":"+sec+":"+mil+" "+ampm, 50, 114);
-
-		}
-		setInterval(renderTime, 40);
-</script>
-
-
-
-
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};
+  return i;
+}
+	
+	
+	</script>
 
     <h3 class="w3-padding-64"><b>MATH.assist</b></h3>
   </div>
