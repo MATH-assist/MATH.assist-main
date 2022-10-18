@@ -93,6 +93,7 @@ div2.innerHTML = `<div class="gfq-wrap">
      
  			<input type="button" class="tab-button" onclick="location.href='/games/main';" value="Home" />
 			<button onclick="darkmode()" class="tab-button">null</button>
+			<button onclick="yourFunction()" class="tab-button">Click Me</button>
 			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
 			<div id="exp-menu-thebody" class="thebody">
