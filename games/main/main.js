@@ -94,18 +94,17 @@ div2.innerHTML = `<div class="gfq-wrap">
  
 
 			<h4>Almost Site-Wide Tab Cloaker</h4>
-			<div class="thebody">
+			<div id="exp-menu-thebody" class="thebody">
 				<p> Enter text below to change the title or an image URL to change the icon</p>
 				
 				<p class="input"> <input id="userinput" type="text"
 						 autocomplete="off" autofocus="" placeholder="Insert tab name or image link"></p>
 				
 
-				<div id="preview-container" class="preview-container"><img id="image-preview"></div>
-			</div>
+			
 			
 	
-		<div class="button-wrapper">
+		<div id="title-buttons" class="button-wrapper">
 			<button onclick="changeTabTitle()" class="button">Set Title</button>
 			<button onclick="changeTabIcon()" class="button">Set Icon</button>
 			<button onclick="resetTabSettings()" class="button">Reset</button>
