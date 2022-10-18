@@ -225,18 +225,89 @@ window.localStorage.setItem("darkmode", "false");
 	document.getElementById('darklight').innerHTML = "Dark";
 console.log("setting button to Dark");
 console.log("the page should be Light");
+		//set new style
+		var lightstyles = `
+	body { 
+	background-color: white;
+	}
+	.w3-white,.w3-hover-white:hover { 
+	color: black!important;
+	background-color: white!important;
+	}
+	#myInput { 
+	background-color: white;
+	border-color: grey;
+	}
+	#vertical-menu-one a { 
+	background-color: white;
+	color: black;
+	}
+	`
+	
+var styleSheet1 = document.createElement("style")
+styleSheet1.innerText = lightstyles
+document.body.appendChild(styleSheet1)
+
 
 }else if (localStorage.getItem("darkmode") == "true"){
 
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
+	//set new style
+	var styles = `
+	body { 
+	background-color: #1a1a1a;
+	}
+	.w3-white,.w3-hover-white:hover { 
+	color: #00adb3!important;
+	background-color: #1a1a1a!important;
+	}
+	#myInput { 
+	background-color: #1a1a1a;
+	border-color: #850000;
+	}
+	#vertical-menu-one a { 
+	background-color: #1a1a1a;
+	color: #06a4aa;
+	}
+	`
+		
+	
+var styleSheet = document.createElement("style")
+styleSheet.innerText = styles
+document.body.appendChild(styleSheet)
+	
+	
 }else{
 	
 
 	document.getElementById('darklight').innerHTML = "Dark";
 	console.log("setting button to Dark");
 	console.log("the page should be Light");
+	//set new style
+	var lightstyles = `
+	body { 
+	background-color: white;
+	}
+	.w3-white,.w3-hover-white:hover { 
+	color: black!important;
+	background-color: white!important;
+	}
+	#myInput { 
+	background-color: white;
+	border-color: grey;
+	}
+	#vertical-menu-one a { 
+	background-color: white;
+	color: black;
+	}
+	`
+	
+var styleSheet1 = document.createElement("style")
+styleSheet1.innerText = lightstyles
+document.body.appendChild(styleSheet1)
+
 	
 }
 
