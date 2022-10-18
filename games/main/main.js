@@ -152,36 +152,8 @@ if (localStorage.getItem("darkmode") == "false"){
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
 	//add style to page
-	
 		
-	
-var styleSheet2 = document.createElement("style")
-styleSheet2.innerText = darkstyles
-document.head.appendChild(styleSheet2)
-
-}else{
-
-	window.localStorage.setItem("darkmode", "false");
-	document.getElementById('darklight').innerHTML = "Dark";
-	console.log("setting button to Dark");
-	console.log("the page should be Light");
-	//add style to page
-	
-	
-		
-	
-var styleSheet1 = document.createElement("style")
-styleSheet1.innerText = lightstyles
-document.head.appendChild(styleSheet1)
-
-	
-}
-}
-
-
-window.onload = function(){
-	
-var darkstyles = `
+var styles = `
 	body { 
 	background-color: #1a1a1a;
 	}
@@ -198,7 +170,22 @@ var darkstyles = `
 	color: #06a4aa;
 	}
 	`
-	var lightstyles = `
+		
+	
+var styleSheet = document.createElement("style")
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)
+
+}else{
+
+	window.localStorage.setItem("darkmode", "false");
+	document.getElementById('darklight').innerHTML = "Dark";
+	console.log("setting button to Dark");
+	console.log("the page should be Light");
+	//add style to page
+	
+	
+		var lightstyles = `
 	body { 
 	background-color: white;
 	}
@@ -215,6 +202,21 @@ var darkstyles = `
 	color: black;
 	}
 	`
+	
+var styleSheet1 = document.createElement("style")
+styleSheet1.innerText = lightstyles
+document.head.appendChild(styleSheet1)
+
+	
+}
+}
+
+
+window.onload = function(){
+
+	
+
+
 
 	
 	if (localStorage.getItem("darkmode") == null){
