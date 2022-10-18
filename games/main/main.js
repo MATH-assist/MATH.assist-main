@@ -174,7 +174,7 @@ var styles = `
 	
 var styleSheet = document.createElement("style")
 styleSheet.innerText = styles
-document.head.appendChild(styleSheet)
+document.body.appendChild(styleSheet)
 
 }else{
 
