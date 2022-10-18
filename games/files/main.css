@@ -390,16 +390,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   cursor: pointer;
   display: inline-block;
   font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.5;
-  margin: 0;
+  margin: 2px;
   max-width: none;
-  min-height: 44px;
+  min-height: 41px;
   min-width: 10px;
   outline: none;
   overflow: hidden;
-  padding: 9px 20px 8px;
+  padding: 0px 12px 0px;
   position: relative;
   text-align: center;
   text-transform: none;
@@ -408,4 +408,3 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   touch-action: manipulation;
   width: 100%;
 }
-
