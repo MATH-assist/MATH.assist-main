@@ -161,7 +161,7 @@ var styles = `
 	color: #00adb3!important;
 	background-color: #1a1a1a!important;
 	}
-	#myinput { 
+	#myInput { 
 	background-color: #1a1a1a;
 	border-color: #850000;
 	}
@@ -193,7 +193,7 @@ document.body.appendChild(styleSheet)
 	color: black!important;
 	background-color: white!important;
 	}
-	#myinput { 
+	#myInput { 
 	background-color: white;
 	border-color: grey;
 	}
