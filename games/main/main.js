@@ -213,7 +213,10 @@ document.body.appendChild(styleSheet1)
 
 window.onload = function(){
 	
-	if (localStorage.getItem("darkmode") == null){
+	const colordark = localStorage.getItem('darkmode');
+
+	
+	if (colordark == "false"){
 	
 window.localStorage.setItem("darkmode", "false");
 	document.getElementById('darklight').innerHTML = "Dark";
@@ -244,7 +247,7 @@ styleSheet1.innerText = lightstyles
 document.body.appendChild(styleSheet1)
 
 
-}else if (localStorage.getItem("darkmode") == "true"){
+}else if (colordark == "true"){
 
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
