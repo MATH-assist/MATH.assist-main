@@ -169,6 +169,10 @@ var styles = `
 	background-color: #1a1a1a;
 	color: #06a4aa;
 	}
+	.vertical-menu {
+	bacground-color: #1a1a1a;
+	color: #06a4aa;
+	}
 	`
 		
 	
@@ -199,6 +203,10 @@ document.body.appendChild(styleSheet)
 	#vertical-menu-one a { 
 	background-color: white;
 	color: black;
+	}
+	.vertical-menu {
+	bacground-color: white;
+	color: white;
 	}
 	`
 	
@@ -240,6 +248,10 @@ console.log("the page should be Light");
 	background-color: white;
 	color: black;
 	}
+	.vertical-menu {
+	bacground-color: white;
+	color: black;
+	}
 	`
 	
 var styleSheet1 = document.createElement("style")
@@ -268,6 +280,10 @@ document.body.appendChild(styleSheet1)
 	}
 	#vertical-menu-one a { 
 	background-color: #1a1a1a;
+	color: #06a4aa;
+	}
+	.vertical-menu {
+	bacground-color: #1a1a1a;
 	color: #06a4aa;
 	}
 	`
@@ -300,6 +316,10 @@ document.body.appendChild(styleSheet)
 	#vertical-menu-one a { 
 	background-color: white;
 	color: black;
+	}
+	.vertical-menu {
+	bacground-color: white;
+	color: wihte;
 	}
 	`
 	
