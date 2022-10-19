@@ -53,8 +53,15 @@ body {font-size:16px;}
 
 </head>
 <body>
+	
+	    <div class="crop">
+
+	
 <img src="blank.png" alt="clock sizer">
-<figure>
+
+	</div>
+	
+	<figure>
   <div class="face top"><p id="s"></p></div>
   <div class="face front"><p id="m"></p></div>
   <div class="face left"><p id="h"></p></div>
@@ -91,6 +98,20 @@ figure:hover{-webkit-transform:rotateX(-50deg) rotateY(45deg);transform:rotateX(
   0%{color:#2982ff;text-shadow:0px 0px 5px #000;}
   50%{color:#cc4343;text-shadow:0px 0px 5px #ff0000;}
 }
+	
+	
+    .crop {
+        width: 200px;
+        height: 150px;
+        overflow: hidden;
+    }
+
+    .crop img {
+        width: 400px;
+        height: 300px;
+        margin: -75px 0 0 -100px;
+    }
+	
 </style>
 
 	
