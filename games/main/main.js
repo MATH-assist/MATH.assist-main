@@ -169,7 +169,7 @@ var styles = `
 	background-color: #1a1a1a;
 	color: #06a4aa;
 	}
-	.vertical-menu {
+	.vertical-menu a {
 	bacground-color: #1a1a1a;
 	color: #06a4aa;
 	}
@@ -204,7 +204,7 @@ document.body.appendChild(styleSheet)
 	background-color: white;
 	color: black;
 	}
-	.vertical-menu {
+	.vertical-menu a {
 	bacground-color: white;
 	color: white;
 	}
@@ -248,7 +248,7 @@ console.log("the page should be Light");
 	background-color: white;
 	color: black;
 	}
-	.vertical-menu {
+	.vertical-menu a {
 	bacground-color: white;
 	color: black;
 	}
@@ -282,7 +282,7 @@ document.body.appendChild(styleSheet1)
 	background-color: #1a1a1a;
 	color: #06a4aa;
 	}
-	.vertical-menu {
+	.vertical-menu a {
 	bacground-color: #1a1a1a;
 	color: #06a4aa;
 	}
@@ -317,7 +317,7 @@ document.body.appendChild(styleSheet)
 	background-color: white;
 	color: black;
 	}
-	.vertical-menu {
+	.vertical-menu a {
 	bacground-color: white;
 	color: wihte;
 	}
