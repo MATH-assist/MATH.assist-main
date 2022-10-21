@@ -169,10 +169,20 @@ var styles = `
 	background-color: #1a1a1a;
 	color: #06a4aa;
 	}
-	.vertical-menu a {
-	bacground-color: #1a1a1a;
-	color: #06a4aa;
-	}
+		.vertical-menu a {
+  background-color:  #1a1a1a; /* Grey background color */
+  color: #06a4aa; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+  .vertical-menu a:hover {
+    color: green;
+    
+
+    
+}
 	`
 		
 	
@@ -205,9 +215,19 @@ document.body.appendChild(styleSheet)
 	color: black;
 	}
 	.vertical-menu a {
-	bacground-color: white;
-	color: white;
-	}
+  background-color: white; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+  .vertical-menu a:hover {
+    color: green;
+    
+
+    
+}
 	`
 	
 var styleSheet1 = document.createElement("style")
@@ -248,10 +268,20 @@ console.log("the page should be Light");
 	background-color: white;
 	color: black;
 	}
-	.vertical-menu a {
-	bacground-color: white;
-	color: black;
-	}
+		.vertical-menu a {
+  background-color: white; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+  .vertical-menu a:hover {
+    color: green;
+    
+
+    
+}
 	`
 	
 var styleSheet1 = document.createElement("style")
@@ -283,9 +313,19 @@ document.body.appendChild(styleSheet1)
 	color: #06a4aa;
 	}
 	.vertical-menu a {
-	bacground-color: #1a1a1a;
-	color: #06a4aa;
-	}
+  background-color: #1a1a1a; /* Grey background color */
+  color: #06a4aa; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+  .vertical-menu a:hover {
+    color: green;
+    
+
+    
+}
 	`
 		
 	
@@ -318,9 +358,19 @@ document.body.appendChild(styleSheet)
 	color: black;
 	}
 	.vertical-menu a {
-	bacground-color: white;
-	color: wihte;
-	}
+  background-color: white; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+  .vertical-menu a:hover {
+    color: green;
+    
+
+    
+}
 	`
 	
 var styleSheet1 = document.createElement("style")
