@@ -417,6 +417,7 @@ hr.rounded {
 position: fixed;
 bottom: 30px;
 right: 30px
+z-index: 1; /* Sit on top */
 }
 .panel-active{
 position: absolute;
@@ -425,4 +426,5 @@ right: 40px;
 width: 250px;
 border-style: dashed;
 background-color: #ffffff;
+z-index: 1; /* Sit on top */
 }
