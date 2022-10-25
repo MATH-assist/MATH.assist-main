@@ -1,4 +1,7 @@
 
+
+<script>
+
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
@@ -74,24 +77,20 @@ document.head.appendChild(link);
 
 
 function openSettings() {
-   var varygoodvar = document.getElementById("setpan");
-   varygoodvar.classList.toggle("panel-active");
-}
 
 
 
-function openSettings() {
-   var varygoodvar = document.getElementById("setpan");
-   varygoodvar.classList.toggle("panel-active");
-}
+if (localStorage.getItem("settings123") == "open"){
+const elementset1 = document.getElementById("setpan");
+elementset1.remove();
+window.localStorage.setItem("settings123", "closed");
 
 
-
-window.addEventListener("load", () => {
-
-const div2 = document.createElement('div');
+   }else{
+   
+   const div2 = document.createElement('div');
 div2.innerHTML = `<div class="gfq-wrap">
- <div id="setpan" class="gfq-panel">
+ <div id="setpan" class="panel-active">
      
  			<input type="button" class="tab-button" onclick="location.href='/games/main';" value="Home" />
 			<button onclick="darkmode()" id="darklight" class="tab-button">Dark</button>
@@ -117,6 +116,25 @@ div2.innerHTML = `<div class="gfq-wrap">
      
     
 </div>
+</div> `;
+
+document.body.insertAdjacentElement('afterbegin', div2);
+window.localStorage.setItem("settings123", "open");
+   
+   
+}
+}
+
+
+
+
+
+
+window.addEventListener("load", () => {
+window.localStorage.setItem("settings123", "closed");
+const div2 = document.createElement('div');
+div2.innerHTML = `<div class="gfq-wrap">
+ 
     
     </div>
      <div class="gfq-badge">
@@ -183,6 +201,7 @@ var styles = `
 
     
 }
+
 	`
 		
 	
@@ -228,6 +247,7 @@ document.body.appendChild(styleSheet)
 
     
 }
+
 	`
 	
 var styleSheet1 = document.createElement("style")
@@ -382,3 +402,4 @@ document.body.appendChild(styleSheet1)
 
 
 };
+</script>
