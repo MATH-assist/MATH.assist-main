@@ -1,7 +1,5 @@
 
 
-<script>
-
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
@@ -402,4 +400,3 @@ document.body.appendChild(styleSheet1)
 
 
 };
-</script>
