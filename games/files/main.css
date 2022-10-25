@@ -413,3 +413,15 @@ hr.rounded {
   border-top: 6px solid #bbb;
   border-radius: 5px;
 }
+.gfq-badge{
+position: absolute;
+bottom: 30px;
+right: 30px
+}
+.panel-active{
+position: absolute;
+bottom: 40px;
+right: 40px;
+width: 250px;
+border-style: dashed;
+}
