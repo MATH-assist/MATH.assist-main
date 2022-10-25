@@ -414,7 +414,7 @@ hr.rounded {
   border-radius: 5px;
 }
 .gfq-badge{
-position: absolute;
+position: relative;
 bottom: 30px;
 right: 30px
 }
