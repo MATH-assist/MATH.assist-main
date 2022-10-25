@@ -125,13 +125,31 @@ window.localStorage.setItem("settings123", "open");
 
 
 
+  document.addEventListener("click", (evt) => {
+        const flyoutEl = document.getElementById("mainpopup");
+        let targetEl = evt.target; // clicked element      
+        do {
+          if(targetEl == flyoutEl) {
+            // This is a click inside, does nothing, just return.
+           console.log("do nothing")
+          }
+          // Go up the DOM
+          targetEl = targetEl.parentNode;
+        } while (targetEl);
+        // This is a click outside.      
+const elementset1 = document.getElementById("setpan");
+elementset1.remove();
+window.localStorage.setItem("settings123", "closed");
+      });
+
+
 
 
 
 window.addEventListener("load", () => {
 window.localStorage.setItem("settings123", "closed");
 const div2 = document.createElement('div');
-div2.innerHTML = `<div class="gfq-wrap">
+div2.innerHTML = `<div id="mainpopup" class="gfq-wrap">
  
     
     </div>
