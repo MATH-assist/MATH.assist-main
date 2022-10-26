@@ -7,8 +7,13 @@ var currentIcon = localStorage.getItem('storedicon');
 document.title = currentTitle;
 window.addEventListener('load', (event) => {
 	
-  console.log('page is fully loaded now atempting to restore favicon and add a site name');
+  console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
      changeFavicon(currentIcon);
+	
+	if (localStorage.getItem('darkmode') == null){
+		
+		window.localStorage.setItem("darkmode", "false");
+	}
   
  if (localStorage.getItem("storedtitle") == null) {
         window.document.title = "LEGEND";
@@ -179,11 +184,6 @@ if (localStorage.getItem("darkmode") == "false"){
 
 
 window.onload = function(){
-	
-	if (localStorage.getItem('darkmode') == null){
-		
-		window.localStorage.setItem("darkmode", "false");
-	}
 	
 	const colordark = localStorage.getItem('darkmode');
 
