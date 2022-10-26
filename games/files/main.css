@@ -419,7 +419,7 @@ bottom: 30px;
 right: 30px
 }
 .panel-active{
-position: absolute;
+position: fixed;
 bottom: 40px;
 right: 40px;
 width: 250px;
