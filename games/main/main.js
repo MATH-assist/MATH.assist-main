@@ -126,7 +126,7 @@ window.localStorage.setItem("settings123", "open");
 
 
   document.addEventListener("click", (evt) => {
-        const flyoutEl = document.getElementById("mainpopup");
+        const flyoutEl = document.getElementsByClassName("panel-active");
         let targetEl = evt.target; // clicked element      
         do {
           if(targetEl == flyoutEl) {
@@ -140,7 +140,8 @@ window.localStorage.setItem("settings123", "open");
 const elementset1 = document.getElementById("setpan");
 elementset1.remove();
 window.localStorage.setItem("settings123", "closed");
-      });
+  }
+  });
 
 
 
@@ -149,7 +150,7 @@ window.localStorage.setItem("settings123", "closed");
 window.addEventListener("load", () => {
 window.localStorage.setItem("settings123", "closed");
 const div2 = document.createElement('div');
-div2.innerHTML = `<div id="mainpopup" class="gfq-wrap">
+div2.innerHTML = `<div class="gfq-wrap">
  
     
     </div>
