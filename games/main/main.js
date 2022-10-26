@@ -125,24 +125,6 @@ window.localStorage.setItem("settings123", "open");
 
 
 
-  document.addEventListener("click", (evt) => {
-        const flyoutEl = document.getElementsByClassName("panel-active");
-        let targetEl = evt.target; // clicked element      
-        do {
-          if(targetEl == flyoutEl) {
-            // This is a click inside, does nothing, just return.
-           console.log("do nothing")
-          }
-          // Go up the DOM
-          targetEl = targetEl.parentNode;
-        } while (targetEl);
-        // This is a click outside.      
-	  if (localStorage.getItem("settings123") == "open"){
-const elementset1 = document.getElementById("setpan");
-elementset1.remove();
-window.localStorage.setItem("settings123", "closed");
-	  }
-  });
 
 
 
