@@ -91,7 +91,7 @@ div2.innerHTML = `<div class="gfq-wrap">
  <div id="setpan" class="panel-active">
      
  			<input type="button" class="tab-button" onclick="location.href='/games/main';" value="Home" />
-			<button onclick="darkmode()" id="darklight" class="tab-button">Dark</button>
+			<button onclick="darkmode()" id="darklight" class="tab-button">undefined</button>
 			<button onclick="yourFunction()" class="tab-button">Click Me</button>
 			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
