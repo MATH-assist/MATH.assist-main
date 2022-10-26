@@ -137,9 +137,11 @@ window.localStorage.setItem("settings123", "open");
           targetEl = targetEl.parentNode;
         } while (targetEl);
         // This is a click outside.      
+	  if (localStorage.getItem("settings123") == "open"){
 const elementset1 = document.getElementById("setpan");
 elementset1.remove();
 window.localStorage.setItem("settings123", "closed");
+	  }
   });
 
 
