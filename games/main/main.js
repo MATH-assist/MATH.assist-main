@@ -166,93 +166,12 @@ function darkmode() {
 if (localStorage.getItem("darkmode") == "false"){
 	
 	window.localStorage.setItem("darkmode", "true");
-	document.getElementById('darklight').innerHTML = "Light";
-	console.log("setting button to Light");
-	console.log("the page should be Dark");
-	//add style to page
-
-var styles = `
-	body { 
-	background-color: #1a1a1a;
-	}
-	.w3-white,.w3-hover-white:hover { 
-	color: #00adb3!important;
-	background-color: #1a1a1a!important;
-	}
-	#myInput { 
-	background-color: #1a1a1a;
-	border-color: #850000;
-	}
-	#vertical-menu-one a { 
-	background-color: #1a1a1a;
-	color: #06a4aa;
-	}
-		.vertical-menu a {
-  background-color:  #1a1a1a; /* Grey background color */
-  color: #06a4aa; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
-}
-
-  .vertical-menu a:hover {
-    color: green;
-    
-
-    
-}
-
-	`;
-		
-	
-var styleSheet = document.createElement("style");
-styleSheet.innerText = styles;
-document.body.appendChild(styleSheet);
+  setdark();
 
 }else{
 
 	window.localStorage.setItem("darkmode", "false");
-	document.getElementById('darklight').innerHTML = "Dark";
-	console.log("setting button to Dark");
-	console.log("the page should be Light");
-	//add style to page
-	
-		var lightstyles = `
-	body { 
-	background-color: white;
-	}
-	.w3-white,.w3-hover-white:hover { 
-	color: black!important;
-	background-color: white!important;
-	}
-	#myInput { 
-	background-color: white;
-	border-color: grey;
-	}
-	#vertical-menu-one a { 
-	background-color: white;
-	color: black;
-	}
-	.vertical-menu a {
-  background-color: white; /* Grey background color */
-  color: black; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
-}
-
-  .vertical-menu a:hover {
-    color: green;
-    
-
-    
-}
-
-	`;
-	
-var styleSheet1 = document.createElement("style");
-styleSheet1.innerText = lightstyles;
-document.body.appendChild(styleSheet1);
+  setlight();
 
 	
 }
@@ -271,50 +190,16 @@ window.onload = function(){
 	
 	if (colordark == "false"){
 	
-window.localStorage.setItem("darkmode", "false");
-	document.getElementById('darklight').innerHTML = "Dark";
-console.log("setting button to Dark");
-console.log("the page should be Light");
-		//set new style
-	
-		var lightstyles = `
-	body { 
-	background-color: white;
-	}
-	.w3-white,.w3-hover-white:hover { 
-	color: black!important;
-	background-color: white!important;
-	}
-	#myInput { 
-	background-color: white;
-	border-color: grey;
-	}
-	#vertical-menu-one a { 
-	background-color: white;
-	color: black;
-	}
-		.vertical-menu a {
-  background-color: white; /* Grey background color */
-  color: black; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
-}
-
-  .vertical-menu a:hover {
-    color: green;
-    
-
-    
-}
-	`;
-	
-var styleSheet1 = document.createElement("style");
-styleSheet1.innerText = lightstyles;
-document.body.appendChild(styleSheet1);
-
+setlight();
 
 }else if (colordark == "true"){
+
+setdark();
+	
+}
+};
+
+function setdark() {
 
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
@@ -357,11 +242,11 @@ document.body.appendChild(styleSheet1);
 var styleSheet = document.createElement("style");
 styleSheet.innerText = styles;
 document.body.appendChild(styleSheet);
-	
-	
-}else{
-	
 
+}
+
+
+function setlight() {
 	document.getElementById('darklight').innerHTML = "Dark";
 	console.log("setting button to Dark");
 	console.log("the page should be Light");
@@ -401,9 +286,7 @@ document.body.appendChild(styleSheet);
 var styleSheet1 = document.createElement("style");
 styleSheet1.innerText = lightstyles;
 document.body.appendChild(styleSheet1);
-
-	
 }
 
 
-};
+
