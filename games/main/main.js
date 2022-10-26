@@ -261,6 +261,11 @@ document.body.appendChild(styleSheet1);
 
 window.onload = function(){
 	
+	if (localStorage.getItem('darkmode') == ""){
+		
+		window.localStorage.setItem("darkmode", "false");
+	}
+	
 	const colordark = localStorage.getItem('darkmode');
 
 	
