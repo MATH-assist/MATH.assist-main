@@ -187,14 +187,14 @@ window.onload = function(){
 	
 
 	
-	if (localStorage.getItem('darkmode') == "false"){
+	if (localStorage.getItem('darkmode') == "true"){
 	
-setlight();
-
+setdark();
+alert("1")
 }else{
 
-setdark();
-	
+setlight();
+alert("2")
 }
 };
 
