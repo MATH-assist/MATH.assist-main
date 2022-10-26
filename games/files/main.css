@@ -426,3 +426,7 @@ width: 250px;
 border-style: dashed;
 background-color: #ffffff;
 }
+.gfq-wrap{
+position:absolute;
+z-index: 1000 !important;
+}
