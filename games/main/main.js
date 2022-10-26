@@ -184,19 +184,16 @@ if (localStorage.getItem("darkmode") == "false"){
 
 
 window.addEventListener('load', (event) => {
-	
-
-	
 	if (localStorage.getItem('darkmode') == "true"){
 	
 setdark();
-alert("1")
+alert("1");
 }else{
 
 setlight();
-alert("2")
+alert("2");
 }
-};
+});
 
 function setdark() {
 
