@@ -183,7 +183,7 @@ if (localStorage.getItem("darkmode") == "false"){
 }
 
 
-window.onload = function(){
+window.addEventListener('load', (event) => {
 	
 
 	
