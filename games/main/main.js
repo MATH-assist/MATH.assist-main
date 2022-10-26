@@ -180,7 +180,7 @@ if (localStorage.getItem("darkmode") == "false"){
 
 window.onload = function(){
 	
-	if (localStorage.getItem('darkmode') == ""){
+	if (localStorage.getItem('darkmode') == null){
 		
 		window.localStorage.setItem("darkmode", "false");
 	}
