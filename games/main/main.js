@@ -185,14 +185,13 @@ if (localStorage.getItem("darkmode") == "false"){
 
 window.onload = function(){
 	
-	const colordark = localStorage.getItem('darkmode');
 
 	
-	if (colordark == "false"){
+	if (localStorage.getItem('darkmode') == "false"){
 	
 setlight();
 
-}else if (colordark == "true"){
+}else{
 
 setdark();
 	
