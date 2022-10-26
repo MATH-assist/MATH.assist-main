@@ -140,7 +140,6 @@ window.localStorage.setItem("settings123", "open");
 const elementset1 = document.getElementById("setpan");
 elementset1.remove();
 window.localStorage.setItem("settings123", "closed");
-  }
   });
 
 
