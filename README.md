@@ -1,4 +1,4 @@
- I DO NOT claim any of these games to be my creation
+ I DO NOT claim any of these games to be my creation!
 
 
 website with stuff and games
