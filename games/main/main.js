@@ -8,7 +8,8 @@ document.title = currentTitle;
 window.addEventListener('load', (event) => {
 	
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
-     changeFavicon(currentIcon);
+        
+	
 	
 	if (localStorage.getItem('darkmode') == null){
 		
@@ -16,7 +17,8 @@ window.addEventListener('load', (event) => {
 	}
   
  if (localStorage.getItem("storedtitle") == null) {
-log(storedtitle);
+
+	  window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
  
  }else{
     window.document.title = storedtitle;
