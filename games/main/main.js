@@ -16,7 +16,8 @@ window.addEventListener('load', (event) => {
 	}
   
  if (localStorage.getItem("storedtitle") == null) {
-        window.document.title = "LEGEND";
+log(storedtitle);
+ 
  }else{
     window.document.title = storedtitle;
   }
