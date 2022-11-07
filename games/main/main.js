@@ -8,7 +8,19 @@ document.title = currentTitle;
 window.addEventListener('load', (event) => {
 	
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
-        
+
+	
+	if (localStorage.getItem('darkmode') == "false" || null){
+	
+setlight();
+alert("1");
+}else if(localStorage.getItem('darkmode') == "true"){
+
+setdark();
+alert("2");
+}
+	
+	
 	
 	
  if (localStorage.getItem("storedtitle") == null) {
@@ -181,17 +193,6 @@ if (localStorage.getItem("darkmode") == "false"){
 }
 
 
-window.addEventListener('load', (event) => {
-	if (localStorage.getItem('darkmode') == "false"){
-	
-setlight();
-alert("1");
-}else if(localStorage.getItem('darkmode') == "true"){
-
-setdark();
-alert("2");
-}
-});
 
 function setdark() {
 
