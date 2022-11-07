@@ -9,24 +9,6 @@ window.addEventListener('load', (event) => {
 	
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
 
-	/*
-	if (localStorage.getItem('darkmode') == null){
-	
-setlight();
-alert("no preference stored");
-}else if (localStorage.getItem('darkmode') == "false"){
-		
-setlight();
-alert("pref: light");		
-		
-}else if(localStorage.getItem('darkmode') == "true"){
-
-setdark();
-alert("pref: dark");
-}
-	
-	*/
-	
 	
  if (localStorage.getItem("storedtitle") == null) {
 
@@ -226,7 +208,7 @@ alert("pref: dark");
 
 
 function setdark() {
-
+	localStorage.setItem("darkmode", "true");
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
@@ -273,6 +255,7 @@ document.body.appendChild(styleSheet);
 
 
 function setlight() {
+	localStorage.setItem("darkmode", "false");
 	document.getElementById('darklight').innerHTML = "Dark";
 	console.log("setting button to Dark");
 	console.log("the page should be Light");
