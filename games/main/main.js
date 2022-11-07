@@ -139,7 +139,7 @@ window.localStorage.setItem("settings123", "open");
 
 
 window.addEventListener("load", () => {
-window.localStorage.setItem("settings123", "closed");
+window.localStorage.setItem("settings123", "closed"); // close setting on load
 const div2 = document.createElement('div');
 div2.innerHTML = `<div class="gfq-wrap">
  
@@ -187,13 +187,13 @@ if (localStorage.getItem("darkmode") == "false"){
 
 
 window.addEventListener('load', (event) => {
-	if (localStorage.getItem('darkmode') == "true"){
+	if (localStorage.getItem('darkmode') == null){
 	
-setdark();
-alert("1");
-}else{
-
 setlight();
+alert("1");
+}else if(localStorage.getItem('darkmode') == "true"){
+
+setdark();
 alert("2");
 }
 });
