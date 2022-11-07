@@ -165,14 +165,14 @@ if (!document.getElementById(cssId))
 
 
 function darkmode_sw() {
-if (localStorage.getItem('darkmode') == "false"){
+if (localStorage.getItem('pagedark') == "false"){
 	
-	localStorage.setItem("darkmode", "true");
+	localStorage.setItem("pagedark", "true");
   setdark();
 
 }else{
 
-	localStorage.setItem("darkmode", "false");
+	localStorage.setItem("pagedark", "false");
   setlight();
 
 	
@@ -185,16 +185,16 @@ if (localStorage.getItem('darkmode') == "false"){
 
 
 
-	if (localStorage.getItem('darkmode') == null){
+	if (localStorage.getItem('pagedark') == null){
 	
 setlight();
 alert("no preference stored");
-}else if (localStorage.getItem('darkmode') == "false"){
+}else if (localStorage.getItem('pagedark') == "false"){
 		
 setlight();
 alert("pref: light");		
 		
-}else if(localStorage.getItem('darkmode') == "true"){
+}else if(localStorage.getItem('pagedark') == "true"){
 
 setdark();
 alert("pref: dark");
@@ -208,7 +208,7 @@ alert("pref: dark");
 
 
 function setdark() {
-	localStorage.setItem("darkmode", "true");
+	localStorage.setItem("pagedark", "true");
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
@@ -255,7 +255,7 @@ document.body.appendChild(styleSheet);
 
 
 function setlight() {
-	localStorage.setItem("darkmode", "false");
+	localStorage.setItem("pagedark", "false");
 	document.getElementById('darklight').innerHTML = "Dark";
 	console.log("setting button to Dark");
 	console.log("the page should be Light");
