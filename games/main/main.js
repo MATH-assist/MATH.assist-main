@@ -2,7 +2,7 @@
 
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
-var darkmode = localStorage.getItem('darkmode');
+const darkmode = localStorage.getItem('darkmode');
 
 
 document.title = currentTitle;
