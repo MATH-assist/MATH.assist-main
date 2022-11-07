@@ -11,11 +11,6 @@ window.addEventListener('load', (event) => {
         
 	
 	
-	if (localStorage.getItem('darkmode') == null){
-		
-		window.localStorage.setItem("darkmode", "false");
-	}
-  
  if (localStorage.getItem("storedtitle") == null) {
 
 	  window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
@@ -187,7 +182,7 @@ if (localStorage.getItem("darkmode") == "false"){
 
 
 window.addEventListener('load', (event) => {
-	if (localStorage.getItem('darkmode') == null){
+	if (localStorage.getItem('darkmode') == "false"){
 	
 setlight();
 alert("1");
