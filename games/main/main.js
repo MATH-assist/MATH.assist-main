@@ -136,16 +136,16 @@ window.addEventListener("load", () => {
 window.localStorage.setItem("settings123", "closed"); // close setting on load
 
 	
-	if (window.localStorage.getItem('pagedark') == null){
+	if (localStorage.getItem('pagedark') == null){
 	
 setlight();
 alert("no preference stored");
-}else if (window.localStorage.getItem('pagedark') == "false"){
+}else if (localStorage.getItem('pagedark') == "false"){
 		
 setlight();
 alert("pref: light");		
 		
-}else if(window.localStorage.getItem('pagedark') == "true"){
+}else if(localStorage.getItem('pagedark') == "true"){
 
 setdark();
 alert("pref: dark");
