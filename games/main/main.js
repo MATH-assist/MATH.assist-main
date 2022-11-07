@@ -199,6 +199,32 @@ if (localStorage.getItem('darkmode') == "false"){
 
 
 
+
+
+
+
+	if (localStorage.getItem('darkmode') == null){
+	
+setlight();
+alert("no preference stored");
+}else if (localStorage.getItem('darkmode') == "false"){
+		
+setlight();
+alert("pref: light");		
+		
+}else if(localStorage.getItem('darkmode') == "true"){
+
+setdark();
+alert("pref: dark");
+}
+	
+
+
+
+
+
+
+
 function setdark() {
 
 	document.getElementById('darklight').innerHTML = "Light";
