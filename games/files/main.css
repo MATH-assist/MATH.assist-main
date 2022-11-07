@@ -418,10 +418,10 @@ position: fixed;
 bottom: 30px;
 right: 30px
 }
-.panel-active{
+.panel-active {
 position: fixed;
-bottom: 40px;
-right: 40px;
+bottom: 78px;
+right: 78px;
 width: 250px;
 border-style: dashed;
 background-color: #ffffff;
