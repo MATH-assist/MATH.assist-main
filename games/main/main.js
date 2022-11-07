@@ -9,7 +9,7 @@ window.addEventListener('load', (event) => {
 	
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
 
-	
+	/*
 	if (localStorage.getItem('darkmode') == null){
 	
 setlight();
@@ -25,7 +25,7 @@ setdark();
 alert("pref: dark");
 }
 	
-	
+	*/
 	
 	
  if (localStorage.getItem("storedtitle") == null) {
