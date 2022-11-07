@@ -135,21 +135,7 @@ window.localStorage.setItem("settings123", "open");
 window.addEventListener("load", () => {
 window.localStorage.setItem("settings123", "closed"); // close setting on load
 
-	
-	if (localStorage.getItem('pagedark') == null){
-	
-setlight();
-alert("no preference stored");
-}else if (localStorage.getItem('pagedark') == "false"){
-		
-setlight();
-alert("pref: light");		
-		
-}else if(localStorage.getItem('pagedark') == "true"){
 
-setdark();
-alert("pref: dark");
-}
 	
 	
 	
@@ -301,4 +287,19 @@ document.body.appendChild(styleSheet1);
 }
 
 
+	if (localStorage.getItem('pagedark') == null){
+	
+setlight();
+alert("no preference stored");
+}
 
+//else if (localStorage.getItem('pagedark') == "false"){
+		
+//setlight();
+//alert("pref: light");		
+		
+}else{
+
+setdark();
+alert("pref: dark");
+}
