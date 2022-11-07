@@ -2,7 +2,6 @@
 
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
-const darkmode = localStorage.getItem('darkmode');
 
 
 document.title = currentTitle;
@@ -11,16 +10,16 @@ window.addEventListener('load', (event) => {
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
 
 	
-	if (darkmode == null){
+	if (localStorage.getItem('darkmode') == null){
 	
 setlight();
 alert("no preference stored");
-}else if (darkmode == "false"){
+}else if (localStorage.getItem('darkmode') == "false"){
 		
 setlight();
 alert("pref: light");		
 		
-}else if(darkmode == "true"){
+}else if(localStorage.getItem('darkmode') == "true"){
 
 setdark();
 alert("pref: dark");
@@ -184,7 +183,7 @@ if (!document.getElementById(cssId))
 
 
 function darkmode_sw() {
-if (darkmode == "false"){
+if (localStorage.getItem('darkmode') == "false"){
 	
 	localStorage.setItem("darkmode", "true");
   setdark();
