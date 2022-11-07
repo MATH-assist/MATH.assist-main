@@ -134,12 +134,6 @@ window.localStorage.setItem("settings123", "open");
 
 window.addEventListener("load", () => {
 window.localStorage.setItem("settings123", "closed"); // close setting on load
-
-
-	
-	
-	
-	
 	
 const div2 = document.createElement('div');
 div2.innerHTML = `<div class="gfq-wrap">
@@ -286,20 +280,3 @@ styleSheet1.innerText = lightstyles;
 document.body.appendChild(styleSheet1);
 }
 
-
-	if (localStorage.getItem('pagedark') == null){
-	
-setlight();
-alert("no preference stored");
-}
-
-//else if (localStorage.getItem('pagedark') == "false"){
-		
-//setlight();
-//alert("pref: light");		
-		
-}else{
-
-setdark();
-alert("pref: dark");
-}
