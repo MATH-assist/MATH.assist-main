@@ -89,7 +89,7 @@ function onClick(element) {
 
 <h4> hello and welcome to my math help site AKA MATH.assist. we teach math stuff <h4>
  <hr>
- <h3 class="vr" style="width:60%;height:60px;border:0px solid;" onclick="javascript:localstorage.setitem(devmode, true);"> Math Version 3.0.0 <h3>   
+ <h3 class="vr" style="width:60%;height:60px;border:0px solid;" onclick="devMode()"> Math Version 3.0.0 <h3>   
  <hr>
   
    
@@ -122,17 +122,9 @@ darkmode.showWidget();
 </script>
 
 <script>
-	
-if (localstorage.getitem(devmode) == "true"){
-var styles = `
-    .vr { 
-color: green;
-    }
-`
-
-var styleSheet = document.createElement("style")
-styleSheet.innerText = styles
-document.head.appendChild(styleSheet)
+window.localStorage.setItem('DevMode', 'true');
+function devMode() {
+alert("devMode on/off");
 }
 </script>
 	 
