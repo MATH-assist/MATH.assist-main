@@ -1,7 +1,7 @@
 {
 "companyName": "Mofunzone",
 "productName": "Duck Life 4",
-"dataUrl": "WebGL4.data.unityweb",
+"dataUrl": "https://3kh0.github.io/projects/ducklife4/Build/WebGL4.data.unityweb",
 "asmCodeUrl": "WebGL4.asm.code.unityweb",
 "asmMemoryUrl": "WebGL4.asm.memory.unityweb",
 "asmFrameworkUrl": "WebGL4.asm.framework.unityweb",
