@@ -2,7 +2,8 @@
 
 <div id="container"> </div>
 
-<script src="ruffle/ruffle.js"></script>
+<script src="/games/main/main.js"></script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <script>
         window.RufflePlayer = window.RufflePlayer || {};
         window.addEventListener("load", (event) => {
@@ -11,8 +12,8 @@
             const container = document.getElementById("container"); 
             container.appendChild(player);
             player.load({
-                url: "mig29.swf", 
-                backgroundColor: "#000", 
+                url: "/games/main/files/swf/Fancy Pants Adventure II.swf", 
+                backgroundColor: "#ffffff", 
              });
             player.style.width = "450px"; 
             player.style.height = "450px";
