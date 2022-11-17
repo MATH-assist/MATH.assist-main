@@ -3,6 +3,7 @@
   window.wordle.hash = 'a17965zq';
 })();
 const words = [
+    "pablo"
     "cigar",
     "rebut",
     "sissy",
