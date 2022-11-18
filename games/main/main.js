@@ -42,12 +42,12 @@ if (localStorage.getItem('pagedark') == "false"){
  
 	//
 	
- if (localStorage.getItem("storedtitle") == null) {
+ if (localStorage.getItem("storedtitle") != "LEGEND" || null) {
 
-	  window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
- 
+	 
+  window.document.title = storedtitle;
  }else{
-    window.document.title = storedtitle;
+    window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
   }
 });
 
