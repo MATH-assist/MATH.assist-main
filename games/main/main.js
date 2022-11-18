@@ -42,10 +42,11 @@ if (localStorage.getItem('pagedark') == "false"){
  
 	//
 	
- if (localStorage.getItem("storedtitle") != "LEGEND" || null) {
+ if (localStorage.getItem("storedtitle") !== "LEGEND" && localStorage.getItem("storedtitle") !== null){
 
 	 
   window.document.title = storedtitle;
+	 
  }else{
     window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
   }
