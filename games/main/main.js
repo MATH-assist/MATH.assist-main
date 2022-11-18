@@ -132,36 +132,7 @@ window.localStorage.setItem("settings123", "open");
 
 
 
-window.addEventListener("load", () => {
-window.localStorage.setItem("settings123", "closed"); // close setting on load
-	
-const div2 = document.createElement('div');
-div2.innerHTML = `<div class="gfq-wrap">
- 
-    
-    </div>
-     <div class="gfq-badge">
-        <img onclick="openSettings()" src="/logo.png" alt="Icon"/>
-    </div> `;
 
-document.body.insertAdjacentElement('afterbegin', div2);
-	
-	if (localStorage.getItem('pagedark') == "false"){
-	
-	localStorage.setItem("pagedark", "true");
-  setdark();
-
-}else{
-
-	localStorage.setItem("pagedark", "false");
-  setlight();
-
-	
-}
-
- 
-
-});
 
 
 var cssId = 'myCss';  // you could encode the css path itself to generate id..
@@ -293,3 +264,39 @@ styleSheet1.innerText = lightstyles;
 document.body.appendChild(styleSheet1);
 }
 
+
+
+
+
+
+
+window.addEventListener("load", () => {
+window.localStorage.setItem("settings123", "closed"); // close setting on load
+	
+const div2 = document.createElement('div');
+div2.innerHTML = `<div class="gfq-wrap">
+ 
+    
+    </div>
+     <div class="gfq-badge">
+        <img onclick="openSettings()" src="/logo.png" alt="Icon"/>
+    </div> `;
+
+document.body.insertAdjacentElement('afterbegin', div2);
+	
+	if (localStorage.getItem('pagedark') == "false"){
+	
+	localStorage.setItem("pagedark", "true");
+  setdark();
+
+}else{
+
+	localStorage.setItem("pagedark", "false");
+  setlight();
+
+	
+}
+
+ 
+
+});
