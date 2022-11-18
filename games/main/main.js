@@ -26,15 +26,15 @@ document.body.insertAdjacentElement('afterbegin', div2);
 
 	
 	
-if (localStorage.getItem('pagedark') == "false"){
+if (localStorage.getItem('pagedark') == "true"){
 	
-	localStorage.setItem("pagedark", "true");
-  setdark();
+	localStorage.setItem("pagedark", "false");
+  setlight();
 
 }else{
 
-	localStorage.setItem("pagedark", "false");
-  setlight();
+	localStorage.setItem("pagedark", "true");
+  setdark();
 
 	
 }
@@ -43,13 +43,14 @@ if (localStorage.getItem('pagedark') == "false"){
 	//
 	
  if (localStorage.getItem("storedtitle") !== "LEGEND" && localStorage.getItem("storedtitle") !== null){
-
-	 
   window.document.title = storedtitle;
-	 
- }else{
+ }else if (localStorage.getItem("storedtitle") == null){
     window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
+  }else{
+  window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
   }
+	
+
 });
 
 const changeTabTitle = () => {
