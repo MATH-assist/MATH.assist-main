@@ -145,6 +145,19 @@ div2.innerHTML = `<div class="gfq-wrap">
     </div> `;
 
 document.body.insertAdjacentElement('afterbegin', div2);
+	
+	if (localStorage.getItem('pagedark') == "false"){
+	
+	localStorage.setItem("pagedark", "true");
+  setdark();
+
+}else{
+
+	localStorage.setItem("pagedark", "false");
+  setlight();
+
+	
+}
 
  
 
