@@ -9,6 +9,38 @@ window.addEventListener('load', (event) => {
 	
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
 
+
+	//
+window.localStorage.setItem("settings123", "closed"); // close setting on load
+	
+const div2 = document.createElement('div');
+div2.innerHTML = `<div class="gfq-wrap">
+ 
+    
+    </div>
+     <div class="gfq-badge">
+        <img onclick="openSettings()" src="/logo.png" alt="Icon"/>
+    </div> `;
+
+document.body.insertAdjacentElement('afterbegin', div2);
+
+	
+	
+if (localStorage.getItem('pagedark') == "false"){
+	
+	localStorage.setItem("pagedark", "true");
+  setdark();
+
+}else{
+
+	localStorage.setItem("pagedark", "false");
+  setlight();
+
+	
+}
+
+ 
+	//
 	
  if (localStorage.getItem("storedtitle") == null) {
 
@@ -269,7 +301,7 @@ document.body.appendChild(styleSheet1);
 
 
 
-
+/*
 window.addEventListener("load", () => {
 window.localStorage.setItem("settings123", "closed"); // close setting on load
 	
@@ -283,8 +315,10 @@ div2.innerHTML = `<div class="gfq-wrap">
     </div> `;
 
 document.body.insertAdjacentElement('afterbegin', div2);
+
 	
-	if (localStorage.getItem('pagedark') == "false"){
+	
+if (localStorage.getItem('pagedark') == "false"){
 	
 	localStorage.setItem("pagedark", "true");
   setdark();
@@ -300,3 +334,4 @@ document.body.insertAdjacentElement('afterbegin', div2);
  
 
 });
+*/
