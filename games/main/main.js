@@ -128,7 +128,7 @@ div2.innerHTML = `<div class="gfq-wrap">
  			<input type="button" class="tab-button" onclick="location.href='/games/main';" value="Home" />
 			<button onclick="darkmode_sw()" id="darklight" class="tab-button">dark</button>
 			<button onclick="yourFunction()" class="tab-button">Click Me</button>
-			<button onclick="testFunction()" id="12334b" class="tab-button">unblock</button>
+			<button onclick="testFunction()" id="buttonz" class="tab-button">unblock</button>
 			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
 			<div id="exp-menu-thebody" class="thebody">
@@ -336,14 +336,14 @@ if (localStorage.getItem('pagedark') == "false"){
 
 function testFunction() {
   if(localstorage.getitem('leave') == "false"){
-	document.getElementById('12334b').innerHTML = "on";
+	document.getElementById('buttonz').innerHTML = "on";
 	localStorage.setItem("leave", "true");
 	
 }else if (localstorage.getitem('leave') == "true"){
-	document.getElementById('12334b').innerHTML = "off";
+	document.getElementById('buttonz').innerHTML = "off";
 	localStorage.setItem("leave", "false");
 }else{
-	document.getElementById('12334b').innerHTML = "on";
+	document.getElementById('buttonz').innerHTML = "on";
 	localStorage.setItem("leave", "true");	
 }
 }
