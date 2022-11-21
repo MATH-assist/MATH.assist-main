@@ -333,7 +333,7 @@ if (localStorage.getItem('pagedark') == "false"){
 
 });
 */
-
+/*
 function testFunction() {
   if(localstorage.getitem('leave') == "false"){
 	document.getElementById('buttonz').innerHTML = "on";
@@ -347,10 +347,10 @@ function testFunction() {
 	localStorage.setItem("leave", "true");	
 }
 }
-
+*/
 window.onbeforeunload = function (e) {
 	
-	if(localstorage.getitem('leave') == "false");
+//	if(localstorage.getitem('leave') == "false");
     e = e || window.event;
 
     // For IE and Firefox prior to version 4
