@@ -335,14 +335,17 @@ if (localStorage.getItem('pagedark') == "false"){
 });
 */
 
-function unblock(){
+function unblock() {
   if(localstorage.getitem('leave') == "false"){
-		document.getElementById('12334b').innerHTML = "on";
-		localStorage.setItem("leave", "true");
+	document.getElementById('12334b').innerHTML = "on";
+	localStorage.setItem("leave", "true");
 	
-}else if (localstorage.getitem('leave') == "true");
+}else if (localstorage.getitem('leave') == "true"){
 	document.getElementById('12334b').innerHTML = "off";
 	localStorage.setItem("leave", "false");
+}else{
+	document.getElementById('12334b').innerHTML = "on";
+	localStorage.setItem("leave", "true");	
 }
 
 
