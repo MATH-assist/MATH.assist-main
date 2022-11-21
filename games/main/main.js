@@ -347,7 +347,7 @@ function unblock() {
 	document.getElementById('12334b').innerHTML = "on";
 	localStorage.setItem("leave", "true");	
 }
-
+}
 
 window.onbeforeunload = function (e) {
 	
