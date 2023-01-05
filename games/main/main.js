@@ -350,7 +350,7 @@ function testFunction() {
 
 window.onbeforeunload = function (e) {
 	
-//	if(localstorage.getitem('leave') == "false");
+	if(localstorage.getitem('leave') == "false"); {
     e = e || window.event;
 
     // For IE and Firefox prior to version 4
@@ -359,5 +359,7 @@ window.onbeforeunload = function (e) {
     }
 
     // For Safari
-    return 'Sure?';
-};
+  
+	return 'Sure?';
+	}
+	};
