@@ -337,22 +337,22 @@ if (localStorage.getItem('pagedark') == "false"){
 */
 
 function askFunction() {
-  if(locvarask == "false"){
+  if(locvarask == 0 ){
 	document.getElementById('askonclose').innerHTML = "on";
-	localStorage.setItem("leave", "true");
+	localStorage.setItem("leave", 1);
 	
 }else if (locvarask == "true"){
 	document.getElementById('askonclose').innerHTML = "off";
-	localStorage.setItem("leave", "false");
+	localStorage.setItem("leave", 0);
 }else{
 	document.getElementById('askonclose').innerHTML = "on";
-	localStorage.setItem("leave", "true");	
+	localStorage.setItem("leave", 1);	
 }
 }
 
 window.onbeforeunload = function (e) {
 	
-	if(localstorage.getitem('leave') == "false"); {
+	if(locvarask == 0){
     e = e || window.event;
 
     // For IE and Firefox prior to version 4
