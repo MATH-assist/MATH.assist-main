@@ -341,7 +341,7 @@ function askFunction() {
 	document.getElementById('askonclose').innerHTML = "on";
 	localStorage.setItem("leave", 1);
 	
-}else if (locvarask == "true"){
+}else if (locvarask == 1){
 	document.getElementById('askonclose').innerHTML = "off";
 	localStorage.setItem("leave", 0);
 }else{
