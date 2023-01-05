@@ -334,16 +334,16 @@ if (localStorage.getItem('pagedark') == "false"){
 });
 */
 
-function testFunction() {
+function askFunction() {
   if(localstorage.getitem('leave') == "false"){
-	document.getElementById('buttonz').innerHTML = "on";
+	document.getElementById('askonclose').innerHTML = "on";
 	localStorage.setItem("leave", "true");
 	
 }else if (localstorage.getitem('leave') == "true"){
-	document.getElementById('buttonz').innerHTML = "off";
+	document.getElementById('askonclose').innerHTML = "off";
 	localStorage.setItem("leave", "false");
 }else{
-	document.getElementById('buttonz').innerHTML = "on";
+	document.getElementById('askonclose').innerHTML = "on";
 	localStorage.setItem("leave", "true");	
 }
 }
