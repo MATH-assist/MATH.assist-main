@@ -147,7 +147,9 @@ div2.innerHTML = `<div class="gfq-wrap">
 			<button onclick="changeTabTitle()" class="tab-button">Set Title</button>
 			<button onclick="changeTabIcon()" class="tab-button">Set Icon</button>
 			<button onclick="resetTabSettings()" class="tab-button">Reset</button>
-			
+			<button onclick="setGoogle()" class="tab-button">Google</button>
+			<button onclick="setClassroom()" class="tab-button">Classroom</button>
+			<button onclick="setDrive()" class="tab-button">Drive</button>
      
      
     
@@ -162,8 +164,24 @@ window.localStorage.setItem("settings123", "open");
 }
 
 
-
-
+function setGoogle() { 
+	changeFavicon("https://seeklogo.com/images/N/new-google-favicon-logo-5E38E037AF-seeklogo.com.png");
+	window.localStorage.setItem("storedtitle", "Google");//set google site name to storage
+	window.document.title = "Google";
+	window.localStorage.setItem("storedicon", "https://seeklogo.com/images/N/new-google-favicon-logo-5E38E037AF-seeklogo.com.png");//set google site icon to storage
+}
+function setClassroom() { 
+	changeFavicon("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Google_Classroom_Logo.svg/512px-Google_Classroom_Logo.svg.png?20221017163738");
+	window.localStorage.setItem("storedtitle", "Classroom");//set google site name to storage
+	window.document.title = "Classroom";
+	window.localStorage.setItem("storedicon", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Google_Classroom_Logo.svg/512px-Google_Classroom_Logo.svg.png?20221017163738");//set google site icon to storage
+}
+function setDrive() { 
+	changeFavicon("https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/2295px-Google_Drive_icon_%282020%29.svg.png");
+	window.localStorage.setItem("storedtitle", "Google Drive");//set google site name to storage
+	window.document.title = "Google Drive";
+	window.localStorage.setItem("storedicon", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/2295px-Google_Drive_icon_%282020%29.svg.png");//set google site icon to storage
+}
 
 
 
