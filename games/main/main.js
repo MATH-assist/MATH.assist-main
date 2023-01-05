@@ -2,8 +2,7 @@
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
-var
-var
+var locvarask = localStorage.getItem('leave'); // var for ask before leave
 
 
 document.title = currentTitle;
