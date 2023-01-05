@@ -2,6 +2,9 @@
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
 
+var
+var
+
 
 document.title = currentTitle;
 window.addEventListener('load', (event) => {
@@ -335,11 +338,11 @@ if (localStorage.getItem('pagedark') == "false"){
 */
 
 function askFunction() {
-  if(localstorage.getitem('leave') == "false"){
+  if(locvarask == "false"){
 	document.getElementById('askonclose').innerHTML = "on";
 	localStorage.setItem("leave", "true");
 	
-}else if (localstorage.getitem('leave') == "true"){
+}else if (locvarask == "true"){
 	document.getElementById('askonclose').innerHTML = "off";
 	localStorage.setItem("leave", "false");
 }else{
