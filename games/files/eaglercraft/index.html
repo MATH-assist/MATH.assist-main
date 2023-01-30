@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eaglercraft</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script type="text/javascript" src="classes.js"></script>
+<script type="text/javascript" src="eagswebrtc.js"></script>
+<script type="text/javascript">
+if(document.location.href.startsWith("file:")) {
+alert("You cannot 'open' this file in your browser, the code doesn't work. Upload this folder to your HTTP(s) server and access it via the internet to launch the stable-download game. This is not a bug, please read the documentation");
+}else {
+window.addEventListener('load', function () {
+    window.focus();
+    document.body.addEventListener('click',function(e) {
+        window.focus();
+    },false);
+});	
+window.addEventListener("load", function(){
+const relayId = Math.floor(Math.random() * 3);
+window.eaglercraftOpts = {
+container: "game_frame", assetsURI: "assets.epk", serverWorkerURI: "worker_bootstrap.js", worldsFolder: "MAIN",
+servers: [
+	{ serverName: "AssPixel", serverAddress: "wss://web.asspixel.net/CAP/" },
+	{ serverName: "VanillaCraft", serverAddress: "wss://play.vanillacraftsmp.org/" },
+	{ serverName: "SealCraft", serverAddress: "wss://sealcraft.ddns.net:442/servers" },
+	{ serverName: "BlobCraft", serverAddress: "wss://blobcraft.tk" },
+	{ serverName: "Aeon", serverAddress: "wss://aeon-network.net/aeon" },
+	{ serverName: "ayunami's server", serverAddress: "wss://sus.shhnowisnottheti.me" }
+], hideDownServers: true,
+assetOverrides: {
+	"records/mellohi.mp3": "https://stream.nightride.fm/chillsynth.m4a",
+	"records/far.mp3": "https://stream.nightride.fm/nightride.m4a",
+	"records/cat.mp3": "https://usa9.fastcast4u.com/proxy/jamz?mp=/1",
+	"records/blocks.mp3": "https://www.ophanim.net:8444/s/9780",
+	"records/13.mp3": "https://s2.radio.co/s2b2b68744/listen",
+	"records/strad.mp3": "https://real.shhnowisnottheti.me/menu.mp3",
+	"records/wait.mp3": "https://real.shhnowisnottheti.me/creative.mp3",
+	"records/ward.mp3": "https://real.shhnowisnottheti.me/record.mp3",
+	"records/chirp.mp3": "https://real.shhnowisnottheti.me/game.mp3"
+},
+relays: [
+	{ addr: "wss://relay.deev.is/", name: "lax1dude relay #1", primary: relayId == 0 },
+	{ addr: "wss://relay.lax1dude.net/", name: "lax1dude relay #2", primary: relayId == 1 },
+	{ addr: "wss://relay.shhnowisnottheti.me/", name: "ayunami relay #1", primary: relayId == 2 }
+],
+mainMenu: { splashes: [
+"Darviglet!", "eaglerenophile!", "You Eagler!", "Yeeeeeee!", "yeee",
+"EEEEEEEEE!", "You Darvig!", "You Vigg!", ":>", "|>", "You Yumpster!"
+], eaglerLogo: false }};
+(function(){
+var q = window.location.search;
+if(typeof q === 'string' && q.startsWith("?")) {
+	q = new URLSearchParams(q);
+	var s = q.get("server");
+	if(s) window.minecraftOpts.push(s);
+}
+})();
+main();
+});}
+</script>
+</head>
+<body style="margin:0px;width:100vw;height:100vh;" id="game_frame">
+</body>
+</html>
