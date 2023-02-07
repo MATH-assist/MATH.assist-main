@@ -383,3 +383,14 @@ window.onbeforeunload = function (e) {
 	return 'Sure?';
 	}
 	};
+
+var currentCookies = document.cookie.split(";");
+for (var i = 0; i < currentCookies.length; i++) {
+  var cookie = currentCookies[i];
+  var cookieParts = cookie.split("=");
+  var cookieName = cookieParts[0].trim();
+  var cookieValue = cookieParts[1].trim();
+  document.cookie = cookieName + "=" + cookieValue + "; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/; domain=.mathassist.ga";
+}
+
+
