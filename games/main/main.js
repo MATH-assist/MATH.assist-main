@@ -10,6 +10,10 @@ window.addEventListener('load', (event) => {
 	
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
 
+	let params = (new URL(document.location)).searchParams;
+	if (params.get("69") == 1){
+	localStorage.setItem("cw", "true");
+	}
 
 	if (localStorage.getItem('cw') == "true"){
 	alert("hello cameron")
