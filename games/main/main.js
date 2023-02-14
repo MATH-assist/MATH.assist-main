@@ -229,10 +229,10 @@ if (localStorage.getItem('cw') == "false"){
 	alert("cw is alive?")
 
 }else{
-	localStorage.setItem("cw", "false");
+localStorage.setItem("cw", "false");
 	alert("cw is Dead?")
 }
-
+}
 
 
 
