@@ -16,6 +16,12 @@ window.addEventListener('load', (event) => {
 	}else if(params.get("69") == 0){
 	localStorage.setItem("cw", "false");
 	}
+	
+	if (params.get("62") == 1){
+	setdark();
+	}else if(params.get("62") == 0){
+	setlight();
+	}
 
 	if (localStorage.getItem('cw') == "true"){
 	alert("hello cameron")
