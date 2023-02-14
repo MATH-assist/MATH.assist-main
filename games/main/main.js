@@ -1,7 +1,7 @@
 
 var currentTitle = localStorage.getItem('storedtitle');
 var currentIcon = localStorage.getItem('storedicon');
-
+var iscw = localStorage.getItem('cw');
 var locvarask = localStorage.getItem('leave'); // var for ask before leave
 
 
@@ -11,6 +11,13 @@ window.addEventListener('load', (event) => {
   console.log('page is fully loaded now atempting to restore favicon and add a site name and set theme');
 
 
+	if (localStorage.getItem('cw') == "true"){
+	alert("hello cameron")
+	window.location.reload("https://google.com")
+		
+	}
+	
+	
 	//
 window.localStorage.setItem("settings123", "closed"); // close setting on load
 	
@@ -131,6 +138,7 @@ div2.innerHTML = `<div class="gfq-wrap">
 			<button onclick="darkmode_sw()" id="darklight" class="tab-button">dark</button>
 			<button onclick="yourFunction()" class="tab-button">Click Me</button>
 			<button onclick="askFunction()" id="askonclose" class="tab-button">unblock</button>
+			<button onclick="dieFunction()" id="cwt" class="tab-button">cw</button>
 			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
 			<div id="exp-menu-thebody" class="thebody">
@@ -214,6 +222,17 @@ if (localStorage.getItem('pagedark') == "false"){
 }
 }
 
+
+function dieFunction() {
+if (localStorage.getItem('cw') == "false"){
+  localStorage.setItem("cw", "true");
+
+}else{
+  localStorage.setItem("cw", "false");
+
+	
+}
+}
 
 
 
@@ -371,6 +390,7 @@ function askFunction() {
 window.onbeforeunload = function (e) {
 	
 	if(locvarask == 0){
+		if(cw == false){
     e = e || window.event;
 
     // For IE and Firefox prior to version 4
@@ -381,6 +401,7 @@ window.onbeforeunload = function (e) {
     // For Safari
   
 	return 'Sure?';
+		}
 	}
 	};
 
