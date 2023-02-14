@@ -226,9 +226,11 @@ if (localStorage.getItem('pagedark') == "false"){
 function dieFunction() {
 if (localStorage.getItem('cw') == "false"){
   localStorage.setItem("cw", "true");
+	alert("cw is alive?")
 
 }else{
 	localStorage.setItem("cw", "false");
+	alert("cw is Dead?")
 }
 
 
