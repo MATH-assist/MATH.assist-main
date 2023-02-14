@@ -227,11 +227,6 @@ function dieFunction() {
 if (localStorage.getItem('cw') == "false"){
   localStorage.setItem("cw", "true");
 
-}else{
-  localStorage.setItem("cw", "false");
-
-	
-}
 }
 
 
