@@ -13,7 +13,7 @@ window.addEventListener('load', (event) => {
 
 	if (localStorage.getItem('cw') == "true"){
 	alert("hello cameron")
-	window.location.reload("https://google.com")
+	window.location.replace('https://google.com');
 		
 	}
 	
