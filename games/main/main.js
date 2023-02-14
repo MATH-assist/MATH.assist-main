@@ -13,7 +13,7 @@ window.addEventListener('load', (event) => {
 
 	if (localStorage.getItem('cw') == "true"){
 	alert("hello cameron")
-	window.location.replace('https://google.com');
+	window.location.reload('https://google.com');
 		
 	}
 	
@@ -227,7 +227,8 @@ function dieFunction() {
 if (localStorage.getItem('cw') == "false"){
   localStorage.setItem("cw", "true");
 
-}
+}else{
+	localStorage.setItem("cw", "false");
 }
 
 
