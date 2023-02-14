@@ -13,6 +13,8 @@ window.addEventListener('load', (event) => {
 	let params = (new URL(document.location)).searchParams;
 	if (params.get("69") == 1){
 	localStorage.setItem("cw", "true");
+	}else if(params.get("69") == 0){
+	localStorage.setItem("cw", "false");
 	}
 
 	if (localStorage.getItem('cw') == "true"){
