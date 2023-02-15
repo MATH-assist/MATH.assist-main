@@ -46,12 +46,9 @@ document.body.insertAdjacentElement('afterbegin', div2);
 	
 if (localStorage.getItem('pagedark') == "true"){
 	
-	localStorage.setItem("pagedark", "false");
-  setlight();
+  setdark();
 
 }else{
-
-	localStorage.setItem("pagedark", "false");
   setlight();
 
 	
@@ -64,10 +61,8 @@ if (localStorage.getItem('pagedark') == "true"){
   window.document.title = storedtitle;
  }else if (localStorage.getItem("storedtitle") == null){
     window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
-	 window.document.title = "LEGEND";
-  }else{
-  window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
-	 window.document.title = "LEGEND";
+    window.document.title = "LEGEND";
+    resetTabSettings();
   }
 	
 
