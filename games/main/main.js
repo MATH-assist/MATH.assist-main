@@ -64,8 +64,10 @@ if (localStorage.getItem('pagedark') == "true"){
   window.document.title = storedtitle;
  }else if (localStorage.getItem("storedtitle") == null){
     window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
+	 window.document.title = "LEGEND";
   }else{
   window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
+	 window.document.title = "LEGEND";
   }
 	
 
