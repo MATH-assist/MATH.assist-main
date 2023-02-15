@@ -149,7 +149,7 @@ div2.innerHTML = `<div class="gfq-wrap">
  <div id="setpan" class="panel-active">
      
  			<input type="button" class="tab-button" onclick="location.href='/games/main';" value="Home" />
-			<button onclick="darkmode_sw()" id="darklight" class="tab-button">dark</button>
+			<button onclick="darkmode_sw()" id="darklight" class="tab-button">Dark</button>
 			<button onclick="yourFunction()" class="tab-button">Click Me</button>
 			<button onclick="askFunction()" id="askonclose" class="tab-button">unblock</button>
 			<button onclick="dieFunction()" id="cwt" class="tab-button">ahhhh</button>
@@ -226,7 +226,7 @@ if (!document.getElementById(cssId))
 
 
 function darkmode_sw() {
-if (localStorage.getItem('pagedark') == "false"){
+if (localStorage.getItem('pagedark') == "true"){
   setdark();
 
 }else{
