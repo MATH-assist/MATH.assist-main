@@ -256,7 +256,7 @@ localStorage.setItem("cw", "false");
 
 
 function setdark() {
-	localStorage.setItem("pagedark", "true");
+	localStorage.setItem("pagedark", "false");
 	document.getElementById('darklight').innerHTML = "Light";
 	console.log("setting button to Light");
 	console.log("the page should be Dark");
@@ -303,7 +303,7 @@ document.body.appendChild(styleSheet);
 
 
 function setlight() {
-	localStorage.setItem("pagedark", "false");
+	localStorage.setItem("pagedark", "true");
 	document.getElementById('darklight').innerHTML = "Dark";
 	console.log("setting button to Dark");
 	console.log("the page should be Light");
