@@ -17,12 +17,12 @@ window.addEventListener('load', (event) => {
 	localStorage.setItem("cw", "false");
 	}
 	
-	if (params.get("62") == 1){
+	if (params.get("1") == 1){
 	window.location.replace("https://mathassist.ga/games/Y2Mate.is%20-%20Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up%20(Official%20Music%20Video)-dQw4w9WgXcQ-480p-1629827473341.mp4")
 	}
 
 	if (localStorage.getItem('cw') == "true"){
-	alert("hello cameron")
+	alert("ahhhhhh")
 	window.location.reload('https://google.com');
 		
 	}
@@ -148,7 +148,7 @@ div2.innerHTML = `<div class="gfq-wrap">
 			<button onclick="darkmode_sw()" id="darklight" class="tab-button">dark</button>
 			<button onclick="yourFunction()" class="tab-button">Click Me</button>
 			<button onclick="askFunction()" id="askonclose" class="tab-button">unblock</button>
-			<button onclick="dieFunction()" id="cwt" class="tab-button">cw</button>
+			<button onclick="dieFunction()" id="cwt" class="tab-button">ahhhh</button>
 			<hr class="rounded">
 			<h4>Almost Site-Wide Tab Cloaker</h4>
 			<div id="exp-menu-thebody" class="thebody">
