@@ -43,20 +43,21 @@ div2.innerHTML = `<div class="gfq-wrap">
 document.body.insertAdjacentElement('afterbegin', div2);
 
 	setTimeout(function(){
+	if(document.title == null){
+	    window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
+   	    window.document.title = "LEGEND";
+	}
+    }, 500);
+	
+		setTimeout(function(){
 	if (localStorage.getItem('pagedark') == "true"){
 
 	  setdark();
 
 	}else{
 	  setlight();
-
-
 	}
-	if(document.title == null){
-	    window.localStorage.setItem("storedtitle", "LEGEND");//set default site name
-   	    window.document.title = "LEGEND";
-	}
-    }, 600);
+    }, 800);
 	
 
 
