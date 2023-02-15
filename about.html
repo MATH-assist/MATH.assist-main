@@ -123,9 +123,14 @@ darkmode.showWidget();
 </script>
 
 <script>
-window.localStorage.setItem('DevMode', 'true');
 function devMode() {
-alert("devMode on/off");
+	if(localstorage.getitem("develop-mode") == true){	
+        alert("devMode off");
+	window.localStorage.setItem('develop-mode', 'false');
+}else{	
+        alert("devMode on");
+	window.localStorage.setItem('develop-mode', 'true');
+}
 }
 </script>
 	 
