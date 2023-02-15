@@ -89,7 +89,7 @@ function onClick(element) {
 
 <h4> hello and welcome to my math help site AKA MATH.assist. we teach math stuff <h4>
  <hr>
- <h3 class="vr" style="width:60%;height:60px;border:0px solid;" onclick="devMode()"> Math Version 4.0.0 <h3>   
+ <h3 class="vr" style="width:60%;height:60px;border:0px solid;" onclick="devMode()"> Math Version 2.0.5c <h3>   
  <hr>
   
    
@@ -126,7 +126,7 @@ function devMode() {
 	if(localstorage.getitem("develop-mode") == true){	
         alert("devMode off");
 	window.localStorage.setItem('develop-mode', 'false');
-}else{	
+	}else{	
         alert("devMode on");
 	window.localStorage.setItem('develop-mode', 'true');
 }
