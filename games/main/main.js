@@ -427,7 +427,5 @@ for (var i = 0; i < currentCookies.length; i++) {
   document.cookie = cookieName + "=" + cookieValue + "; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/; domain=.mathassist.ga";
 }
 
-	
-If (document.referer == null) {
-alert("no") 
-} 
+	 
+
