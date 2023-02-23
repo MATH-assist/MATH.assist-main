@@ -17,6 +17,11 @@ window.addEventListener('load', (event) => {
 	localStorage.setItem("cw", "false");
 	}
 	
+        If (document.referer == null) {
+	alert("no")
+	} 
+
+
 	if (params.get("1") == 1){
 	window.location.replace("https://mathassist.ga/games/Y2Mate.is%20-%20Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up%20(Official%20Music%20Video)-dQw4w9WgXcQ-480p-1629827473341.mp4")
 	}
