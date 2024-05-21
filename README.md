@@ -1,3 +1,14 @@
+# 5/21/2024 #
+This repository is now going to be archived. It was fun while it lasted. Thank you for your support everyone!
+
+
+
+
+
+
+
+
+
  I DO NOT claim any of these games to be my creation!
 
 
